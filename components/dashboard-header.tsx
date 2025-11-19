@@ -10,7 +10,7 @@ export function DashboardHeader() {
   const { user } = useAuth()
 
   return (
-    <header className="bg-[#59AC77] dark:bg-gray-800 border-b border-amber-300 dark:border-gray-700 shadow-sm">
+    <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
       <div className="px-6 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
