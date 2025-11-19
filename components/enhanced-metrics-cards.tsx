@@ -79,8 +79,8 @@ export function EnhancedMetricsCards() {
       change: loading ? 0 : metrics.growthRate,
       changeLabel: "vs tahun lalu",
       icon: Building2,
-      color: "text-blue-700",
-      bgColor: "bg-blue-50",
+      color: "text-teal-700",
+      bgColor: "bg-teal-50",
       progress: 75,
       target: "Target: 3,000"
     },
@@ -90,8 +90,8 @@ export function EnhancedMetricsCards() {
       change: 18.3,
       changeLabel: "vs tahun lalu",
       icon: DollarSign,
-      color: "text-green-700",
-      bgColor: "bg-green-50",
+      color: "text-cyan-700",
+      bgColor: "bg-cyan-50",
       progress: 82,
       target: "Target: Rp 50T"
     },
@@ -101,8 +101,8 @@ export function EnhancedMetricsCards() {
       change: 8.7,
       changeLabel: "vs tahun lalu",
       icon: Users,
-      color: "text-purple-700",
-      bgColor: "bg-purple-50",
+      color: "text-blue-700",
+      bgColor: "bg-blue-50",
       progress: 68,
       target: "Target: 200,000"
     },
@@ -112,8 +112,8 @@ export function EnhancedMetricsCards() {
       change: 2.1,
       changeLabel: "vs target",
       icon: BarChart3,
-      color: "text-orange-700",
-      bgColor: "bg-orange-50",
+      color: "text-teal-600",
+      bgColor: "bg-teal-50",
       progress: 85,
       target: "Target: 20%"
     }
@@ -141,18 +141,18 @@ export function EnhancedMetricsCards() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {metricsData.map((metric, index) => (
           <Card key={index} className={cn(
-            "border border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-gradient-to-br from-amber-50 to-orange-50"
+            "border border-teal-200/30 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700"
           )}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <div className="flex flex-col">
-                <CardTitle className="text-sm font-medium text-amber-700">
+                <CardTitle className="text-sm font-medium text-slate-600 dark:text-slate-300">
                   {metric.title}
                 </CardTitle>
-                <Badge className="w-fit mt-1 px-2.5 py-0.5 text-xs font-semibold bg-orange-100 text-orange-700 border border-orange-200">
+                <Badge className="w-fit mt-1 px-2.5 py-0.5 text-xs font-semibold bg-teal-100 text-teal-700 border border-teal-200 dark:bg-teal-900/30 dark:text-teal-300 dark:border-teal-800">
                   {year}
                 </Badge>
               </div>
-              <div className="p-2 rounded-lg bg-gradient-to-br from-orange-100 to-amber-100">
+              <div className="p-2 rounded-lg bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/50 dark:to-cyan-900/50">
                 <metric.icon className={cn("h-5 w-5", metric.color)} />
               </div>
             </CardHeader>

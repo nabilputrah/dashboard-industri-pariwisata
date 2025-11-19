@@ -130,7 +130,7 @@ export function ComparisonDashboard() {
     : null
 
   const totalInvestment = comparisonData.reduce((sum, item) => sum + item.investment, 0)
-  const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6']
+  const COLORS = ['#14b8a6', '#06b6d4', '#0ea5e9', '#3b82f6', '#0d9488']
 
   if (error) {
     return (

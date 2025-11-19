@@ -108,20 +108,20 @@ export function DashboardSidebar({ activeSection, onSectionChange }: DashboardSi
 
   return (
     <div className={cn(
-      "bg-gradient-to-b from-amber-50 to-orange-50 border-r border-amber-200 transition-all duration-300 flex flex-col",
+      "bg-gradient-to-b from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 border-r border-slate-700 transition-all duration-300 flex flex-col shadow-xl",
       collapsed ? "w-16" : "w-64"
     )}>
       {/* Header */}
-      <div className="p-4 border-b border-amber-200">
+      <div className="p-4 border-b border-slate-700/50">
         <div className="flex items-center justify-between">
           {!collapsed && (
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-amber-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg flex items-center justify-center shadow-lg">
                 <Globe className="w-4 h-4 text-white" />
               </div>
               <div>
-                <h2 className="font-semibold text-amber-900 text-sm">Dashboard</h2>
-                <p className="text-xs text-amber-700">Industri Pariwisata</p>
+                <h2 className="font-semibold text-white text-sm">Dashboard</h2>
+                <p className="text-xs text-slate-400">Pariwisata Jabar</p>
               </div>
             </div>
           )}
@@ -129,32 +129,33 @@ export function DashboardSidebar({ activeSection, onSectionChange }: DashboardSi
             variant="ghost"
             size="sm"
             onClick={() => setCollapsed(!collapsed)}
-            className="h-8 w-8 p-0"
+            className="h-8 w-8 p-0 hover:bg-slate-700"
           >
-            {collapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+            {collapsed ? <ChevronRight className="w-4 h-4 text-slate-300" /> : <ChevronLeft className="w-4 h-4 text-slate-300" />}
           </Button>
         </div>
       </div>
 
       {/* Navigation */}
       <ScrollArea className="flex-1 px-3 py-4">
-        <div className="space-y-1">
+        <div className="space-y-2">
           {navigationItems.map((item) => (
             <Button
               key={item.id}
               variant={activeSection === item.id ? "secondary" : "ghost"}
               className={cn(
-                "w-full justify-start h-10 px-3",
+                "w-full justify-start h-10 px-3 transition-all duration-200",
                 collapsed ? "px-2" : "px-3",
-                activeSection === item.id && "bg-gradient-to-r from-orange-100 to-amber-100 text-orange-800 border-orange-300"
+                activeSection === item.id && "bg-gradient-to-r from-teal-600 to-teal-500 text-white shadow-lg hover:from-teal-700 hover:to-teal-600",
+                activeSection !== item.id && "text-slate-300 hover:bg-slate-700/50 hover:text-white"
               )}
               onClick={() => onSectionChange(item.id)}
             >
               <item.icon className={cn("w-4 h-4", collapsed ? "mx-auto" : "mr-3")} />
               {!collapsed && (
                 <div className="flex-1 text-left">
-                  <div className="font-medium text-sm text-amber-900">{item.label}</div>
-                  <div className="text-xs text-amber-700">{item.description}</div>
+                  <div className="font-medium text-sm">{item.label}</div>
+                  <div className="text-xs text-slate-400">{item.description}</div>
                 </div>
               )}
             </Button>

@@ -10,13 +10,13 @@ export function DashboardHeader() {
   const { user } = useAuth()
 
   return (
-    <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
-      <div className="px-6 py-3">
+    <header className="bg-gradient-to-r from-teal-600 to-teal-500 dark:from-slate-900 dark:to-slate-800 border-b border-teal-700 dark:border-slate-700 shadow-lg">
+      <div className="px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img src="/logo/logo-parekraf.png" alt="Logo" className="h-12 w-12 object-contain" />
-            <h1 className="text-xl font-semibold text-[#FFE797] dark:text-white">
-              Dashboard Industri Pariwisata Jawa Barat
+            <img src="/logo/logo-parekraf.png" alt="Logo" className="h-12 w-12 object-contain rounded-lg bg-white/10 p-1" />
+            <h1 className="text-2xl font-bold text-white">
+              Dashboard Pariwisata Jabar
             </h1>
           </div>
 
