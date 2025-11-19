@@ -388,8 +388,8 @@ export function RegionalAnalysisDashboard() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Jumlah Proyek dan Tenaga Kerja Ekonomi Kreatif Berdasarkan Wilayah di Jawa Barat</h2>
-          <p className="text-gray-600 mt-1">Analisis komprehensif proyek dan tenaga kerja ekonomi kreatif berdasarkan wilayah periode 2020-2025</p>
+          <h2 className="text-2xl font-bold text-gray-900">Jumlah Proyek dan Tenaga Kerja Industri Pariwisata Berdasarkan Wilayah di Jawa Barat</h2>
+          <p className="text-gray-600 mt-1">Analisis komprehensif proyek dan tenaga kerja Industri Pariwisata berdasarkan wilayah periode 2020-2025</p>
         </div>
       </div>
 
@@ -439,7 +439,7 @@ export function RegionalAnalysisDashboard() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-lg font-medium">
-                Jumlah Proyek Ekonomi Kreatif Berdasarkan Wilayah di Jawa Barat Periode 2020 - 2025
+                Jumlah Proyek Industri Pariwisata Berdasarkan Wilayah di Jawa Barat Periode 2020 - 2025
               </CardTitle>
               <Button 
                 variant="outline" 
@@ -468,7 +468,7 @@ export function RegionalAnalysisDashboard() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-lg font-medium">
-                Jumlah Tenaga Kerja Ekonomi Kreatif Berdasarkan Wilayah di Jawa Barat Periode 2020 - 2025
+                Jumlah Tenaga Kerja Industri Pariwisata Berdasarkan Wilayah di Jawa Barat Periode 2020 - 2025
               </CardTitle>
               <Button 
                 variant="outline" 

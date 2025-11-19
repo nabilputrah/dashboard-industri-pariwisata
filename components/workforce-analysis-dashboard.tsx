@@ -265,7 +265,7 @@ export function WorkforceAnalysisDashboard() {
             Analisis Tenaga Kerja Jawa Barat
           </h2>
           <p className="text-gray-600 mt-1">
-            Analisis komprehensif tenaga kerja ekonomi kreatif berdasarkan
+            Analisis komprehensif tenaga kerja Industri Pariwisata berdasarkan
             tahun, kuartal, dan wilayah
           </p>
         </div>

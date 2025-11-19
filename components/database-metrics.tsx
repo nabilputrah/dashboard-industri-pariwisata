@@ -46,7 +46,7 @@ export function DatabaseMetrics() {
 
   const metricsData = [
     {
-      title: "Total Pelaku Ekonomi Kreatif",
+      title: "Total Pelaku Industri Pariwisata",
       value: loading ? "..." : metrics.totalCompanies.toLocaleString(),
       change: loading ? "..." : `${metrics.growthRate >= 0 ? '+' : ''}${metrics.growthRate.toFixed(1)}%`,
       bgColor: "bg-blue-50",

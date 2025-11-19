@@ -1,5 +1,5 @@
 import { supabase } from './supabase'
-import type { CreativeEconomyData, SubsectorSummary, CitySummary } from './supabase'
+import type { CreativeEconomyData, SubsectorSummary, CitySummary, IndustriPariwisataData } from './supabase'
 
 export class DatabaseService {
   // Get all creative economy data with pagination and filters
@@ -64,6 +64,69 @@ export class DatabaseService {
     }
   }
 
+  static async getIndustriPariwisataData(options: {
+    page?: number
+    limit?: number
+    subsector?: string
+    city?: string
+    status?: string
+    year?: number
+    search?: string
+  } = {}) {
+    const {
+      page = 1,
+      limit = 10,
+      subsector,
+      city,
+      status,
+      year,
+      search
+    } = options
+
+    let query = supabase
+      .from('industri_pariwisata_data')
+      .select('*', { count: 'exact' })
+
+    // Apply filters
+    if (subsector) {
+      query = query.eq('subsektor', subsector)
+    }
+    if (city) {
+      query = query.eq('kabkota', city)
+    }
+    if (status) {
+      query = query.eq('status', status)
+    }
+    if (year) {
+      query = query.eq('tahun', year)
+    }
+    if (search) {
+      query = query.or(`nama_perusahaan.ilike.%${search}%,kode_kbli.ilike.%${search}%,judul_kbli.ilike.%${search}%,no_izin.ilike.%${search}%`)
+    }
+
+    // Apply pagination
+    const from = (page - 1) * limit
+    const to = from + limit - 1
+
+    const { data, error, count } = await query
+      .range(from, to)
+      .order('created_at', { ascending: false })
+
+    console.log(data)
+
+    if (error) {
+      console.error('Error fetching data:', error)
+      throw error
+    }
+
+    return {
+      data: data as IndustriPariwisataData[],
+      count: count || 0,
+      totalPages: Math.ceil((count || 0) / limit),
+      currentPage: page
+    }
+  }
+
   // Get subsector summary
   static async getSubsectorSummary() {
     const { data, error } = await supabase
@@ -96,7 +159,7 @@ export class DatabaseService {
 
   static async getDashboardMetrics(year?: number) {
     const { data, error } = await supabase
-      .from('creative_economy_data_total')
+      .from('industri_pariwisata_data_total')
       .select(`
         total_companies,
         total_investment,
@@ -123,7 +186,7 @@ export class DatabaseService {
     const currentYear = year || new Date().getFullYear()
     const currentYearData = data.find(item => item.year === currentYear)
     const previousYearData = await supabase
-      .from('creative_economy_data_total')
+      .from('industri_pariwisata_data_total')
       .select(`
         total_companies,
         total_investment,

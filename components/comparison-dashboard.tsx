@@ -138,7 +138,7 @@ export function ComparisonDashboard() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Perbandingan Wilayah</h2>
-            <p className="text-gray-600 mt-1">Bandingkan kinerja ekonomi kreatif antar wilayah dan periode</p>
+            <p className="text-gray-600 mt-1">Bandingkan kinerja industri pariwisata antar wilayah dan periode</p>
           </div>
         </div>
         <Card>
@@ -160,7 +160,7 @@ export function ComparisonDashboard() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-gray-900">Perbandingan Wilayah</h2>
-          <p className="text-gray-600 mt-1">Bandingkan kinerja ekonomi kreatif antar wilayah dan periode</p>
+          <p className="text-gray-600 mt-1">Bandingkan kinerja industri pariwisata antar wilayah dan periode</p>
         </div>
         {/* <div className="flex gap-2">
           <Button variant="outline" size="sm">

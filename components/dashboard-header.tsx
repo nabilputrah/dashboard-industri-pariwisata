@@ -16,7 +16,7 @@ export function DashboardHeader() {
           <div className="flex items-center gap-4">
             <img src="/logo/logo-parekraf.png" alt="Logo" className="h-12 w-12 object-contain" />
             <h1 className="text-xl font-semibold text-[#FFE797] dark:text-white">
-              Dashboard Ekonomi Kreatif Jawa Barat
+              Dashboard Industri Pariwisata Jawa Barat
             </h1>
           </div>
 

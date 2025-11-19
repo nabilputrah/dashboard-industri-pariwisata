@@ -94,12 +94,12 @@ const navigationItems = [
     icon: FileText,
     description: "Ranking wilayah"
   },
-  {
-    id: "haki",
-    label: "HAKI",
-    icon: FileText,
-    description: "Hak Kekayaan Intelektual"
-  }
+  // {
+  //   id: "haki",
+  //   label: "HAKI",
+  //   icon: FileText,
+  //   description: "Hak Kekayaan Intelektual"
+  // }
 ]
 
 export function DashboardSidebar({ activeSection, onSectionChange }: DashboardSidebarProps) {
@@ -121,7 +121,7 @@ export function DashboardSidebar({ activeSection, onSectionChange }: DashboardSi
               </div>
               <div>
                 <h2 className="font-semibold text-amber-900 text-sm">Dashboard</h2>
-                <p className="text-xs text-amber-700">Ekonomi Kreatif</p>
+                <p className="text-xs text-amber-700">Industri Pariwisata</p>
               </div>
             </div>
           )}

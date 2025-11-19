@@ -104,8 +104,6 @@ export class RankingAnalysisService {
     let query = supabase
       .from('ranking_analysis_data')
       .select('*', { count: 'exact' })
-      .eq('status', 'Workforce')
-
     if (year) {
       query = query.eq('year', year)
     }
@@ -142,8 +140,6 @@ export class RankingAnalysisService {
     let query = supabase
       .from('ranking_analysis_data')
       .select('*', { count: 'exact' })
-      .eq('status', 'Projects')
-
     if (year) {
       query = query.eq('year', year)
     }

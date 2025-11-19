@@ -146,7 +146,7 @@ export function ChartsSection() {
       {/* Year Filter */}
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-gray-900">
-          Analisis Data Ekonomi Kreatif
+          Analisis Data Industri Pariwisata
         </h2>
         <Select
           value={selectedYear.toString()}
@@ -168,7 +168,7 @@ export function ChartsSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="minimal-card p-6">
           <h3 className="text-lg font-medium text-gray-900 mb-6">
-            Pelaku Ekonomi Kreatif ({selectedYear})
+            Pelaku Industri Pariwisata ({selectedYear})
           </h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={subsectorData}>
@@ -275,7 +275,7 @@ export function ChartsSection() {
 
         {/* <div className="lg:col-span-2 minimal-card p-6">
           <h3 className="text-lg font-medium text-gray-900 mb-6">
-            Tren Investasi Ekonomi Kreatif ({selectedYear})
+            Tren Investasi Industri Pariwisata ({selectedYear})
           </h3>
           <ResponsiveContainer width="100%" height={280}>
             <LineChart data={investmentTrend}>

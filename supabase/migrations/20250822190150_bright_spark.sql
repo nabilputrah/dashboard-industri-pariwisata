@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS investment_analysis_data (
   investment_amount BIGINT NOT NULL DEFAULT 0,
   investment_currency TEXT DEFAULT 'IDR',
   region TEXT DEFAULT 'Jawa Barat',
-  sector TEXT DEFAULT 'Ekonomi Kreatif',
+  sector TEXT DEFAULT 'Industri Pariwisata',
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW(),
   UNIQUE(year, quarter)

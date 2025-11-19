@@ -121,7 +121,7 @@ export function DataImportInterface() {
       {/* Header */}
       <div>
         <h2 className="text-2xl font-bold text-gray-900">Import Data</h2>
-        <p className="text-gray-600 mt-1">Unggah file Excel atau CSV untuk menambahkan data ekonomi kreatif</p>
+        <p className="text-gray-600 mt-1">Unggah file Excel atau CSV untuk menambahkan data industri pariwisata</p>
       </div>
 
       {/* Upload Area */}

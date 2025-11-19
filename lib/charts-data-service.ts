@@ -20,7 +20,7 @@ export interface InvestmentTrendData {
 }
 
 export class ChartsDataService {
-  // Get subsector data for "Pelaku Ekonomi Kreatif per Subsektor" chart
+  // Get subsector data for "Pelaku Industri Pariwisata per Subsektor" chart
   static async getSubsectorData(year?: number): Promise<SubsectorChartData[]> {
     try {
       let query = supabase

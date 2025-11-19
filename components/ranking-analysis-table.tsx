@@ -492,8 +492,8 @@ export function RankingAnalysisTable() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Realisasi Ekonomi Kreatif PMA, PMDN, dan Total PMA & PDN di Jawa Barat</h2>
-          <p className="text-gray-600 mt-1">Analisis komprehensif ekonomi kreatif di Jawa Barat Menurut Kabupaten/Kota</p>
+          <h2 className="text-2xl font-bold text-gray-900">Realisasi Industri Pariwisata PMA, PMDN, dan Total PMA & PDN di Jawa Barat</h2>
+          <p className="text-gray-600 mt-1">Analisis komprehensif industri pariwisata di Jawa Barat Menurut Kabupaten/Kota</p>
         </div>
       </div>
       {/* Summary Metrics */}
@@ -562,7 +562,7 @@ export function RankingAnalysisTable() {
       <div className="minimal-card">
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
           <div>
-            <h3 className="text-lg font-medium text-gray-900">Realisasi Ekonomi Kreatif di Jawa Barat</h3>
+            <h3 className="text-lg font-medium text-gray-900">Realisasi Industri Pariwisata di Jawa Barat</h3>
           </div>
           <Button 
             variant="outline" 

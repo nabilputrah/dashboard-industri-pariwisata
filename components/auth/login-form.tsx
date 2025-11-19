@@ -46,7 +46,7 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
           Selamat Datang Kembali
         </h1>
         <p className="text-gray-600">
-          Masuk ke dashboard untuk mengakses analisis ekonomi kreatif
+          Masuk ke dashboard untuk mengakses analisis Industri Pariwisata
         </p>
       </div>
 

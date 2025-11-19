@@ -74,7 +74,7 @@ export function EnhancedMetricsCards() {
 
   const metricsData: MetricCard[] = [
     {
-      title: "Total Pelaku Ekonomi Kreatif",
+      title: "Total Pelaku Industri Pariwisata",
       value: loading ? "..." : metrics.totalCompanies.toLocaleString(),
       change: loading ? 0 : metrics.growthRate,
       changeLabel: "vs tahun lalu",

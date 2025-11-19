@@ -215,7 +215,7 @@ export function InvestmentAnalysisDashboard() {
             Analisis Investasi Jawa Barat
           </h2>
           <p className="text-gray-600 mt-1">
-            Analisis komprehensif investasi ekonomi kreatif berdasarkan tahun
+            Analisis komprehensif investasi industri pariwisata berdasarkan tahun
             dan kuartal
           </p>
         </div>

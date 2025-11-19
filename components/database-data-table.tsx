@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ChevronLeft, ChevronRight, Download, Loader2, Edit2, Check, X, Save } from "lucide-react"
 import { DatabaseService } from "@/lib/database"
-import type { CreativeEconomyData } from "@/lib/supabase"
+import type { CreativeEconomyData, IndustriPariwisataData } from "@/lib/supabase"
 import { toast } from "@/hooks/use-toast"
 
 interface DatabaseDataTableProps {
@@ -22,7 +22,8 @@ interface DatabaseDataTableProps {
 }
 
 export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
-  const [data, setData] = useState<CreativeEconomyData[]>([])
+  // const [data, setData] = useState<CreativeEconomyData[]>([])
+  const [data, setData] = useState<IndustriPariwisataData[]>([])
   const [loading, setLoading] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
@@ -37,10 +38,19 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
   const pageSize = 15
 
   // Available subsectors for dropdown
+  // const subsectors = [
+  //   "FESYEN","KRIYA","KULINER","DESAIN PRODUK","PENERBITAN","FILM","ANIMASI","VIDEO",
+  //   "APLIKASI","PERIKLANAN","SENI PERTUNJUKAN","TV_RADIO","DESAIN INTERIOR","GAME DEVELOPER",
+  //   "ARSITEKTUR","FOTOGRAFI"
+  // ]
+
   const subsectors = [
-    "FESYEN","KRIYA","KULINER","DESAIN PRODUK","PENERBITAN","FILM","ANIMASI","VIDEO",
-    "APLIKASI","PERIKLANAN","SENI PERTUNJUKAN","TV_RADIO","DESAIN INTERIOR","GAME DEVELOPER",
-    "ARSITEKTUR","FOTOGRAFI"
+    "Retail Trade of Country-Specific Tourism Characteristic Goods",
+    "Transport Equipment Rental","Sports and Recreational Activities",
+    "Accomodation for Visitors","Food and beverage serving activities","Connected/Related Activities",
+    "Air Passenger Transport","Travel Agencies and Other Reservation Service Activities",
+    "Cultural Activities","Other Country-Specific Tourism Characteristic Activities",
+    "Railway Passenger Transport","Road Passenger Transport","Water Passenger Transport"
   ]
 
   const fetchData = async (page: number = 1) => {
@@ -48,7 +58,7 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
       setLoading(true)
       setError(null)
       
-      const result = await DatabaseService.getCreativeEconomyData({
+      const result = await DatabaseService.getIndustriPariwisataData({
         page,
         limit: pageSize,
         ...filters
@@ -76,7 +86,8 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
     }
   }
 
-  const formatCurrencyUSD = (amount: number) => {
+  const formatCurrencyUSD = (amount: number | null) => {
+    if (amount === null || amount === undefined) return '$ 0.00'
     return `$ ${amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
   }
 
@@ -98,7 +109,7 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
       // In a real implementation, you might want to export all filtered data
       const csvContent = [
         // Header
-        ['Nama Perusahaan', 'NIB', 'Kode KBLI', 'Judul KBLI', 'Subsektor', 'Kota', 'Investasi', 'Tenaga Kerja', 'Status', 'Tahun', 'Periode'].join(','),
+        ['Nama Perusahaan', 'Kode KBLI', 'Judul KBLI', 'Subsektor', 'Kota', 'Investasi', 'Tenaga Kerja', 'Status', 'Tahun', 'Periode'].join(','),
         // Data rows
         ...data.map(row => [
           `"${row.nama_perusahaan}"`,
@@ -220,7 +231,7 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
     <div className="minimal-card">
       <div className="flex items-center justify-between p-6 border-b border-gray-100">
         <div>
-          <h3 className="text-lg font-medium text-gray-900">Data Pelaku Ekonomi Kreatif</h3>
+          <h3 className="text-lg font-medium text-gray-900">Data Pelaku Industri Pariwisata</h3>
           {Object.keys(filters).length > 0 && (
             <p className="text-sm text-gray-500 mt-1">
               Menampilkan data yang difilter
@@ -253,14 +264,11 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
                 <TableHead className="table-header-orange">Tahun</TableHead>
                 <TableHead className="table-header-orange">Sektor Utama</TableHead>
                 <TableHead className="table-header-orange">24 Sektor</TableHead>
-                <TableHead className="table-header-orange">Pelaku Ekonomi Kreatif</TableHead>
+                <TableHead className="table-header-orange">Pelaku Industri Pariwisata</TableHead>
                 <TableHead className="table-header-orange">Kota</TableHead>
                 <TableHead className="table-header-orange">Bidang Usaha</TableHead>
                 <TableHead className="table-header-orange">Kode KBLI</TableHead>
                 <TableHead className="table-header-orange">Judul KBLI</TableHead>
-                <TableHead className="table-header-orange">Apakah Ekraf?</TableHead>
-                <TableHead className="table-header-orange">Subsektor EKRAF</TableHead>
-                <TableHead className="table-header-orange">Apakah Pariwisata?</TableHead>
                 <TableHead className="table-header-orange">Subsektor Pariwisata</TableHead>
                 <TableHead className="table-header-orange">Negara</TableHead>
                 <TableHead className="table-header-orange">No. Izin</TableHead>
@@ -319,12 +327,6 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
                     <TableCell className="text-gray-600" title={row.judul_kbli}>
                       {row.judul_kbli}
                     </TableCell>
-                    <TableCell
-                      className="max-w-xs truncate text-gray-600"
-                      title={row.is_ekraf ? "Ya" : "Tidak"}
-                    >
-                      {row.is_ekraf ? "Ya" : "Tidak"}
-                    </TableCell>
                     <TableCell>
                       {editingRow === row.id ? (
                         <Select
@@ -355,13 +357,6 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
                         </Badge>
                       )}
                     </TableCell>
-                    <TableCell
-                      className="max-w-xs truncate text-gray-600"
-                      title={row.is_pariwisata ? "Ya" : "Tidak"}
-                    >
-                      {row.is_pariwisata ? "Ya" : "Tidak"}
-                    </TableCell>
-                    <TableCell className="text-gray-600">{row.subsektor_pariwisata ? row.subsektor_pariwisata : '-'}</TableCell>
                     <TableCell className="text-gray-600">{row.negara}</TableCell>  
                     <TableCell className="font-mono text-sm text-gray-600">{row.no_izin}</TableCell>
                     <TableCell className="font-medium text-gray-900">
@@ -380,12 +375,12 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
                       {editingRow === row.id ? (
                         <Input
                           type="number"
-                          value={editingData.tambahan_investasi_idr || 0}
-                          onChange={(e) => handleInputChange('tambahan_investasi_idr', parseInt(e.target.value) || 0)}
+                          value={editingData.tambahan_investasi_rp || 0}
+                          onChange={(e) => handleInputChange('tambahan_investasi_rp', parseInt(e.target.value) || 0)}
                           className="h-8 text-sm"
                         />
                       ) : (
-                        formatCurrencyIDR(row.tambahan_investasi_idr)
+                        formatCurrencyIDR(row.tambahan_investasi_rp)
                       )}
                     </TableCell>
                     <TableCell className="text-gray-600">{row.proyek}</TableCell>

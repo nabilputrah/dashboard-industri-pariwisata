@@ -93,7 +93,7 @@ export function RegisterForm({ onToggleMode }: RegisterFormProps) {
           Buat Akun Baru
         </h1>
         <p className="text-gray-600">
-          Daftar untuk mengakses dashboard ekonomi kreatif Jawa Barat
+          Daftar untuk mengakses dashboard Industri Pariwisata Jawa Barat
         </p>
       </div>
 

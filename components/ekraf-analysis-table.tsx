@@ -331,7 +331,7 @@ export function EkrafAnalysisTable() {
           <div>
             <h3 className="text-lg font-medium text-gray-900">Analisis EKRAF Jawa Barat</h3>
             <p className="text-sm text-gray-500 mt-1">
-              Data komprehensif analisis ekonomi kreatif Jawa Barat
+              Data komprehensif analisis industri pariwisata Jawa Barat
             </p>
           </div>
           <Button 

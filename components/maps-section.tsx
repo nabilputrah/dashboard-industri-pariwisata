@@ -71,7 +71,7 @@ export function MapsSection() {
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="flex items-center gap-2 text-gray-900">
             <MapPin className="h-5 w-5 text-blue-600" />
-            Peta Sebaran Ekonomi Kreatif Jawa Barat
+            Peta Sebaran Industri Pariwisata Jawa Barat
           </CardTitle>
           <div className="flex items-center gap-3">
             <Select value={selectedYear.toString()} onValueChange={(value) => setSelectedYear(parseInt(value))}>

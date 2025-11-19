@@ -24,14 +24,14 @@ export function AuthPage() {
               className="h-16 w-28 mb-6 bg-white/10 rounded-xl p-2"
             />
             <h1 className="text-4xl font-bold mb-4">
-              Dashboard Ekonomi Kreatif
+              Dashboard Industri Pariwisata
             </h1>
             <h2 className="text-2xl font-light mb-6">
               Jawa Barat
             </h2>
             <p className="text-xl text-green-100 leading-relaxed">
               Platform analitik komprehensif untuk memantau dan menganalisis 
-              perkembangan ekonomi kreatif di Jawa Barat
+              perkembangan industri pariwisata di Jawa Barat
             </p>
           </div>
           

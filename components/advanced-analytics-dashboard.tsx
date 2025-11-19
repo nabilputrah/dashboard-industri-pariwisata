@@ -106,7 +106,7 @@ export function AdvancedAnalyticsDashboard() {
       type: "positive",
       title: "Tren Pertumbuhan Positif",
       description:
-        "Pertumbuhan pelaku ekonomi kreatif menunjukkan tren positif dengan rata-rata 12.5% per tahun",
+        "Pertumbuhan pelaku industri pariwisata menunjukkan tren positif dengan rata-rata 12.5% per tahun",
       confidence: 92,
     },
     {
@@ -213,7 +213,7 @@ export function AdvancedAnalyticsDashboard() {
         <TabsContent value="forecasting" className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Prediksi Tren Ekonomi Kreatif</CardTitle>
+              <CardTitle>Prediksi Tren Industri Pariwisata</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>

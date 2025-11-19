@@ -20,8 +20,8 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
-  title: "Dashboard Ekonomi Kreatif Jawa Barat",
-  description: "Dashboard analitik komprehensif untuk data ekonomi kreatif Jawa Barat",
+  title: "Dashboard Industri Pariwisata Jawa Barat",
+  description: "Dashboard analitik komprehensif untuk data industri pariwisata Jawa Barat",
   generator: "v0.app",
 }
 

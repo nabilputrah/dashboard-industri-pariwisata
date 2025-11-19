@@ -26,18 +26,27 @@ export function DatabaseFilters({ onFiltersChange }: DatabaseFiltersProps) {
   })
 
   // Hardcoded options
+  // const subsectors = [
+  //   "FESYEN","KRIYA","KULINER","DESAIN PRODUK","PENERBITAN","FILM","ANIMASI","VIDEO",
+  //   "APLIKASI","PERIKLANAN","SENI PERTUNJUKAN","TV_RADIO","DESAIN INTERIOR","GAME DEVELOPER",
+  //   "ARSITEKTUR","FOTOGRAFI"
+  // ]
+
   const subsectors = [
-    "FESYEN","KRIYA","KULINER","DESAIN PRODUK","PENERBITAN","FILM","ANIMASI","VIDEO",
-    "APLIKASI","PERIKLANAN","SENI PERTUNJUKAN","TV_RADIO","DESAIN INTERIOR","GAME DEVELOPER",
-    "ARSITEKTUR","FOTOGRAFI"
+    "Retail Trade of Country-Specific Tourism Characteristic Goods",
+    "Transport Equipment Rental","Sports and Recreational Activities",
+    "Accomodation for Visitors","Food and beverage serving activities","Connected/Related Activities",
+    "Air Passenger Transport","Travel Agencies and Other Reservation Service Activities",
+    "Cultural Activities","Other Country-Specific Tourism Characteristic Activities",
+    "Railway Passenger Transport","Road Passenger Transport","Water Passenger Transport"
   ]
 
   const cities = [
-    "Kabupaten Garut","Kabupaten Subang","Kabupaten Majalengka","Kabupaten Karawang","Kabupaten Sukabumi",
-    "Kabupaten Bandung","Kabupaten Bekasi","Kabupaten Bogor","Kabupaten Purwakarta","Kota Depok",
-    "Kota Bekasi","Kota Bandung","Kota Cirebon","Kota Bogor","Kabupaten Bandung Barat","Kota Cimahi",
-    "Kabupaten Sumedang","Kabupaten Cirebon","Kabupaten Indramayu","Kabupaten Kuningan","Kabupaten Cianjur",
-    "Kota Sukabumi","Kota Banjar","Kota Tasikmalaya","Kabupaten Pangandaran","Kabupaten Ciamis","Kabupaten Tasikmalaya"
+    "Kabupaten Bekasi","Kabupaten Indramayu","Kabupaten Sumedang","Kota Cirebon","Kota Depok","Kota Bandung",
+    "Kabupaten Bogor","Kota Bekasi","Kota Bogor","Kabupaten Karawang","Kabupaten Purwakarta","Kabupaten Cirebon",
+    "Kabupaten Garut","Kabupaten Bandung","Kabupaten Cianjur","Kota Sukabumi","Kabupaten Tasikmalaya",
+    "Kabupaten Bandung Barat","Kota Cimahi","Kabupaten Sukabumi","Kabupaten Kuningan","Kabupaten Pangandaran",
+    "Kabupaten Subang","Kota Banjar","Kota Tasikmalaya","Kabupaten Majalengka","Kabupaten Ciamis"
   ]
 
   const years = [2020, 2021, 2022, 2023, 2024, 2025]
@@ -83,7 +92,7 @@ export function DatabaseFilters({ onFiltersChange }: DatabaseFiltersProps) {
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           <Input
-            placeholder="Cari Pelaku Ekonomi Kreatif, Kode KBLI, Judul KBLI, atau No. Izin..."
+            placeholder="Cari Pelaku Industri Pariwisata, Kode KBLI, Judul KBLI, atau No. Izin..."
             className="pl-10 border-gray-200 focus:border-gray-400"
             value={filters.search}
             onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}

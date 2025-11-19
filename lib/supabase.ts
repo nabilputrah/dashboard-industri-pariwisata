@@ -40,6 +40,37 @@ export interface CreativeEconomyData {
   bidang_usaha: string
 }
 
+export interface IndustriPariwisataData {
+  id: number
+  tahap: string
+  tahun: number
+  sektor_utama: string
+  sektor_24: string
+  nama_perusahaan: string
+  kontak: string
+  lokasi: string
+  kabkota: string
+  bidang_usaha: string
+  kode_kbli: string
+  judul_kbli: string
+  subsektor: string
+  negara: string
+  no_izin: string
+  tambahan_investasi_usd: number
+  tambahan_investasi_rp: number
+  proyek: string
+  tki: number
+  tka: number
+  tk: number
+  status: 'PMA' | 'PMDN'
+  periode: string
+  semester: string
+  sektor_23: string
+  sektor_17: string
+  created_at: string
+  updated_at: string
+}
+
 export interface SubsectorSummary {
   subsector: string
   total_companies: number
