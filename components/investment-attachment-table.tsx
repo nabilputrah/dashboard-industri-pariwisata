@@ -196,38 +196,38 @@ export function InvestmentAttachmentTable() {
     <div className="overflow-x-auto">
       {regionalLoading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-          <span className="ml-2 text-gray-600">Memuat data wilayah...</span>
+          <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+          <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data wilayah...</span>
         </div>
       ) : (
         <Table>
           <TableHeader>
-            <TableRow className="border-gray-100">
-              <TableHead className="font-medium text-gray-700 w-20">Peringkat</TableHead>
-              <TableHead className="font-medium text-gray-700">Kabupaten/Kota</TableHead>
-              <TableHead className="font-medium text-gray-700">Jumlah Proyek</TableHead>
-              <TableHead className="font-medium text-gray-700">Tambahan Investasi (Dalam US$)</TableHead>
-              <TableHead className="font-medium text-gray-700">Tambahan Investasi (Dalam Rp)</TableHead>
-              <TableHead className="font-medium text-gray-700 w-24">Rasio</TableHead>
+            <TableRow className="border-slate-100">
+              <TableHead className="font-medium text-slate-700 dark:text-slate-300 w-20">Peringkat</TableHead>
+              <TableHead className="font-medium text-slate-700 dark:text-slate-300">Kabupaten/Kota</TableHead>
+              <TableHead className="font-medium text-slate-700 dark:text-slate-300">Jumlah Proyek</TableHead>
+              <TableHead className="font-medium text-slate-700 dark:text-slate-300">Tambahan Investasi (Dalam US$)</TableHead>
+              <TableHead className="font-medium text-slate-700 dark:text-slate-300">Tambahan Investasi (Dalam Rp)</TableHead>
+              <TableHead className="font-medium text-slate-700 dark:text-slate-300 w-24">Rasio</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {regionalData.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-8 text-gray-500">
+                <TableCell colSpan={6} className="text-center py-8 text-slate-500 dark:text-slate-400">
                   Tidak ditemukan data untuk tahun {selectedYear}
                 </TableCell>
               </TableRow>
             ) : (
               <>
                 {regionalData.map((row) => (
-                  <TableRow key={row.id} className="border-gray-100 hover:bg-gray-50">
+                  <TableRow key={row.id} className="border-slate-100 hover:bg-slate-50 dark:bg-slate-900">
                     <TableCell className="text-center">
                       <Badge variant="outline" className="font-mono">
                         {row.rank}
                       </Badge>
                     </TableCell>
-                    <TableCell className="font-medium text-gray-900">{row.name}</TableCell>
+                    <TableCell className="font-medium text-slate-900 dark:text-white">{row.name}</TableCell>
                     <TableCell className="font-medium text-green-600">{row.project_count.toLocaleString()}</TableCell>
                     <TableCell className="font-medium text-green-600">
                       {formatCurrencyUSD(row.investment_usd)}
@@ -243,13 +243,13 @@ export function InvestmentAttachmentTable() {
                   </TableRow>
                 ))}
                 {/* Grand Total Row */}
-                <TableRow className="border-t-2 border-gray-300 bg-gray-50 font-bold">
+                <TableRow className="border-t-2 border-slate-300 bg-slate-50 dark:bg-slate-900 font-bold">
                   <TableCell className="text-center">
                     <Badge variant="default" className="bg-gray-700 text-white">
                       Total
                     </Badge>
                   </TableCell>
-                  <TableCell className="font-bold text-gray-900">Grand Total</TableCell>
+                  <TableCell className="font-bold text-slate-900 dark:text-white">Grand Total</TableCell>
                   <TableCell className="font-bold text-green-700">{regionalGrandTotal.projects.toLocaleString()}</TableCell>
                   <TableCell className="font-bold text-green-700">
                     {formatCurrencyUSD(regionalGrandTotal.investmentUSD)}
@@ -275,13 +275,13 @@ export function InvestmentAttachmentTable() {
     <div className="overflow-x-auto">
       {subsectorLoading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-          <span className="ml-2 text-gray-600">Memuat data subsektor...</span>
+          <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+          <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data subsektor...</span>
         </div>
       ) : (
         <Table>
           <TableHeader>
-            <TableRow className="border-amber-200">
+            <TableRow className="border-teal-200">
               <TableHead className="table-header-orange w-20">Peringkat</TableHead>
               <TableHead className="table-header-orange">Subsektor</TableHead>
               <TableHead className="table-header-orange">Jumlah Proyek</TableHead>
@@ -293,7 +293,7 @@ export function InvestmentAttachmentTable() {
           <TableBody>
             {subsectorData.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-8 text-gray-500">
+                <TableCell colSpan={6} className="text-center py-8 text-slate-500 dark:text-slate-400">
                   Tidak ditemukan data untuk tahun {selectedYear}
                 </TableCell>
               </TableRow>
@@ -306,7 +306,7 @@ export function InvestmentAttachmentTable() {
                         {row.rank}
                       </Badge>
                     </TableCell>
-                    <TableCell className="font-medium text-gray-900">{row.name}</TableCell>
+                    <TableCell className="font-medium text-slate-900 dark:text-white">{row.name}</TableCell>
                     <TableCell className="font-medium text-purple-600">{row.project_count.toLocaleString()}</TableCell>
                     <TableCell className="font-medium text-purple-600">
                       {formatCurrencyUSD(row.investment_usd)}
@@ -322,13 +322,13 @@ export function InvestmentAttachmentTable() {
                   </TableRow>
                 ))}
                 {/* Grand Total Row */}
-                <TableRow className="border-t-2 border-gray-300 bg-gray-50 font-bold">
+                <TableRow className="border-t-2 border-slate-300 bg-slate-50 dark:bg-slate-900 font-bold">
                   <TableCell className="text-center">
                     <Badge variant="default" className="bg-gray-700 text-white">
                       Total
                     </Badge>
                   </TableCell>
-                  <TableCell className="font-bold text-gray-900">Grand Total</TableCell>
+                  <TableCell className="font-bold text-slate-900 dark:text-white">Grand Total</TableCell>
                   <TableCell className="font-bold text-purple-700">{subsectorGrandTotal.projects.toLocaleString()}</TableCell>
                   <TableCell className="font-bold text-purple-700">
                     {formatCurrencyUSD(subsectorGrandTotal.investmentUSD)}
@@ -395,7 +395,7 @@ export function InvestmentAttachmentTable() {
 
   if (error) {
     return (
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="text-center py-8">
           <p className="text-red-600 mb-4">{error}</p>
           <Button onClick={() => window.location.reload()} variant="outline">
@@ -407,17 +407,17 @@ export function InvestmentAttachmentTable() {
   }
 
   return (
-    <div className="minimal-card">
-      <div className="flex items-center justify-between p-6 border-b border-gray-100">
+    <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg">
+      <div className="flex items-center justify-between p-6 border-b border-slate-100">
         <div>
-          <h3 className="text-lg font-medium text-gray-900">Peringkat Berdasarkan Investasi PMA/PMDN</h3>
-          <p className="text-sm text-gray-500 mt-1">
+          <h3 className="text-lg font-medium text-slate-900 dark:text-white">Peringkat Berdasarkan Investasi PMA/PMDN</h3>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
             Data ranking berdasarkan investasi wilayah dan subsektor
           </p>
         </div>
         <div className="flex items-center gap-3">
           <Select value={selectedYear.toString()} onValueChange={(value) => setSelectedYear(parseInt(value))}>
-            <SelectTrigger className="w-[120px] border-gray-200">
+            <SelectTrigger className="w-[120px] border-slate-200">
               <SelectValue placeholder="Tahun" />
             </SelectTrigger>
             <SelectContent>
@@ -431,7 +431,7 @@ export function InvestmentAttachmentTable() {
           <Button 
             variant="outline" 
             size="sm" 
-            className="text-gray-600 border-gray-200 bg-transparent"
+            className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
             onClick={() => exportData(getCurrentData(), `lampiran_investasi_${activeTab}_${selectedYear}.csv`)}
             disabled={getCurrentData().length === 0}
           >
@@ -465,8 +465,8 @@ export function InvestmentAttachmentTable() {
       </Tabs>
 
       {getCurrentData().length > 0 && (
-        <div className="flex items-center justify-between p-6 border-t border-gray-100">
-          <p className="text-sm text-gray-500">
+        <div className="flex items-center justify-between p-6 border-t border-slate-100">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             Menampilkan {((getCurrentPage() - 1) * getCurrentPageSize()) + 1}-{Math.min(getCurrentPage() * getCurrentPageSize(), getCurrentCount())} dari {getCurrentCount().toLocaleString()} data
           </p>
           <div className="flex items-center gap-2">
@@ -475,12 +475,12 @@ export function InvestmentAttachmentTable() {
               size="sm" 
               disabled={getCurrentPage() <= 1}
               onClick={() => handlePageChange(getCurrentPage() - 1)}
-              className="text-gray-600 border-gray-200 bg-transparent"
+              className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
             >
               <ChevronLeft className="w-4 h-4" />
               Sebelumnya
             </Button>
-            <span className="text-sm text-gray-600 px-3">
+            <span className="text-sm text-slate-600 dark:text-slate-400 px-3">
               Halaman {getCurrentPage()} dari {getCurrentTotalPages()}
             </span>
             <Button 
@@ -488,7 +488,7 @@ export function InvestmentAttachmentTable() {
               size="sm" 
               disabled={getCurrentPage() >= getCurrentTotalPages()}
               onClick={() => handlePageChange(getCurrentPage() + 1)}
-              className="text-gray-600 border-gray-200 bg-transparent"
+              className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
             >
               Selanjutnya
               <ChevronRight className="w-4 h-4" />

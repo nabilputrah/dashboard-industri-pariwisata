@@ -11,10 +11,10 @@ const InteractiveMap = dynamic(() => import('./interactive-map'), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full">
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg h-full w-full flex items-center justify-center">
+      <div className="bg-gradient-to-br from-teal-50 to-cyan-100 rounded-lg h-full w-full flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 text-sm">Memuat peta...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto mb-4"></div>
+          <p className="text-slate-600 text-sm">Memuat peta...</p>
         </div>
       </div>
     </div>
@@ -67,15 +67,15 @@ export function MapsSection() {
 
   return (
     <div className="space-y-6">
-      <Card>
-        <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="flex items-center gap-2 text-gray-900">
-            <MapPin className="h-5 w-5 text-blue-600" />
+      <Card className="border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg">
+        <CardHeader className="flex flex-row items-center justify-between border-b border-teal-200/20">
+          <CardTitle className="flex items-center gap-2 text-slate-900 dark:text-white">
+            <MapPin className="h-5 w-5 text-teal-600" />
             Peta Sebaran Industri Pariwisata Jawa Barat
           </CardTitle>
           <div className="flex items-center gap-3">
             <Select value={selectedYear.toString()} onValueChange={(value) => setSelectedYear(parseInt(value))}>
-              <SelectTrigger className="w-[120px] border-gray-200">
+              <SelectTrigger className="w-[120px]">
                 <SelectValue placeholder="Tahun" />
               </SelectTrigger>
               <SelectContent>
@@ -88,26 +88,23 @@ export function MapsSection() {
             </Select>
           </div>
         </CardHeader>
-        <CardContent>
+        <CardContent className="p-0">
           {loading ? (
-            <div className="rounded-lg overflow-hidden h-[450px] w-full bg-gray-50 flex items-center justify-center">
+            <div className="rounded-b-lg overflow-hidden h-[450px] w-full bg-teal-50/50 dark:bg-slate-700 flex items-center justify-center">
               <div className="text-center">
-                <Loader2 className="h-8 w-8 animate-spin text-blue-600 mx-auto mb-4" />
-                <p className="text-gray-600 text-sm">Memuat data peta...</p>
+                <Loader2 className="h-8 w-8 animate-spin text-teal-600 mx-auto mb-4" />
+                <p className="text-slate-600 dark:text-slate-400 text-sm">Memuat data peta...</p>
               </div>
             </div>
           ) : error ? (
-            <div className="rounded-lg overflow-hidden h-[450px] w-full bg-red-50 flex items-center justify-center">
+            <div className="rounded-b-lg overflow-hidden h-[450px] w-full bg-red-50 dark:bg-slate-700 flex items-center justify-center">
               <div className="text-center">
-                <p className="text-red-600 mb-2">{error}</p>
-                <p className="text-gray-600 text-sm">Silakan periksa koneksi database</p>
+                <p className="text-red-600 dark:text-red-400 mb-2">{error}</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">Silakan periksa koneksi database</p>
               </div>
             </div>
           ) : (
-            // <div className="rounded-lg overflow-hidden h-[450px] w-full">
-            //   <InteractiveMap regionData={regionData} />
-            // </div>
-            <div className="rounded-lg overflow-hidden h-[450px] w-full relative z-0">
+            <div className="rounded-b-lg overflow-hidden h-[450px] w-full relative z-0">
               <InteractiveMap regionData={regionData} />
             </div>
           )}

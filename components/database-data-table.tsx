@@ -216,9 +216,9 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
 
   if (error) {
     return (
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-red-200/30 bg-gradient-to-br from-red-50 to-red-50/50 dark:from-slate-800 dark:to-slate-700 p-6 shadow-lg">
         <div className="text-center py-8">
-          <p className="text-red-600 mb-4">{error}</p>
+          <p className="text-red-600 dark:text-red-400 mb-4">{error}</p>
           <Button onClick={() => fetchData(currentPage)} variant="outline">
             Coba lagi
           </Button>
@@ -228,12 +228,12 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
   }
 
   return (
-    <div className="minimal-card">
-      <div className="flex items-center justify-between p-6 border-b border-gray-100">
+    <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg overflow-hidden">
+      <div className="flex items-center justify-between p-6 border-b border-teal-200/20">
         <div>
-          <h3 className="text-lg font-medium text-gray-900">Data Pelaku Industri Pariwisata</h3>
+          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Data Pelaku Industri Pariwisata</h3>
           {Object.keys(filters).length > 0 && (
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
               Menampilkan data yang difilter
             </p>
           )}
@@ -253,8 +253,8 @@ export function DatabaseDataTable({ filters = {} }: DatabaseDataTableProps) {
       <div className="overflow-x-auto">
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-            <span className="ml-2 text-gray-600">Memuat data...</span>
+            <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+            <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data...</span>
           </div>
         ) : (
           <Table>

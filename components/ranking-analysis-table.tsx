@@ -230,13 +230,13 @@ export function RankingAnalysisTable() {
     <div className="overflow-x-auto">
       {investmentLoading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-          <span className="ml-2 text-gray-600">Memuat data investasi...</span>
+          <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+          <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data investasi...</span>
         </div>
       ) : (
         <Table>
           <TableHeader>
-            <TableRow className="border-amber-200">
+            <TableRow className="border-teal-200">
               <TableHead className="table-header-orange w-20">Peringkat</TableHead>
               <TableHead className="table-header-orange">Kabupaten/Kota</TableHead>
               <TableHead className="table-header-orange">Jumlah Proyek</TableHead>
@@ -247,7 +247,7 @@ export function RankingAnalysisTable() {
           <TableBody>
             {investmentData.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={5} className="text-center py-8 text-gray-500">
+                <TableCell colSpan={5} className="text-center py-8 text-slate-500 dark:text-slate-400">
                   Tidak ditemukan data untuk tahun {selectedYear}
                 </TableCell>
               </TableRow>
@@ -260,7 +260,7 @@ export function RankingAnalysisTable() {
                         {row.rank}
                       </Badge>
                     </TableCell>
-                    <TableCell className="font-medium text-gray-900">{row.region}</TableCell>
+                    <TableCell className="font-medium text-slate-900 dark:text-white">{row.region}</TableCell>
                     <TableCell className="font-medium text-green-600">{row.project_count.toLocaleString()}</TableCell>
                     <TableCell className="font-medium text-green-600">
                       {formatCurrencyUSD(row.investment_usd)}
@@ -271,13 +271,13 @@ export function RankingAnalysisTable() {
                   </TableRow>
                 ))}
                 {/* Grand Total Row */}
-                <TableRow className="border-t-2 border-gray-300 bg-gray-50 font-bold">
+                <TableRow className="border-t-2 border-slate-300 bg-slate-50 dark:bg-slate-900 font-bold">
                   <TableCell className="text-center">
                     <Badge variant="default" className="bg-gray-700 text-white">
                       Total
                     </Badge>
                   </TableCell>
-                  <TableCell className="font-bold text-gray-900">Grand Total</TableCell>
+                  <TableCell className="font-bold text-slate-900 dark:text-white">Grand Total</TableCell>
                   <TableCell className="font-bold text-green-700">
                     {investmentData.reduce((sum, item) => sum + item.project_count, 0).toLocaleString()}
                   </TableCell>
@@ -300,13 +300,13 @@ export function RankingAnalysisTable() {
     <div className="overflow-x-auto">
       {workforceLoading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-          <span className="ml-2 text-gray-600">Memuat data tenaga kerja...</span>
+          <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+          <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data tenaga kerja...</span>
         </div>
       ) : (
         <Table>
           <TableHeader>
-            <TableRow className="border-amber-200">
+            <TableRow className="border-teal-200">
               <TableHead className="table-header-orange w-20">Peringkat</TableHead>
               <TableHead className="table-header-orange">Kabupaten/Kota</TableHead>
               <TableHead className="table-header-orange">Jumlah Proyek</TableHead>
@@ -316,7 +316,7 @@ export function RankingAnalysisTable() {
           <TableBody>
             {workforceData.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={4} className="text-center py-8 text-gray-500">
+                <TableCell colSpan={4} className="text-center py-8 text-slate-500 dark:text-slate-400">
                   Tidak ditemukan data untuk tahun {selectedYear}
                 </TableCell>
               </TableRow>
@@ -329,19 +329,19 @@ export function RankingAnalysisTable() {
                         {row.rank}
                       </Badge>
                     </TableCell>
-                    <TableCell className="font-medium text-gray-900">{row.region}</TableCell>
+                    <TableCell className="font-medium text-slate-900 dark:text-white">{row.region}</TableCell>
                     <TableCell className="font-medium text-purple-600">{row.project_count.toLocaleString()}</TableCell>
                     <TableCell className="font-medium text-purple-600">{row.worker_count.toLocaleString()}</TableCell>
                   </TableRow>
                 ))}
                 {/* Grand Total Row */}
-                <TableRow className="border-t-2 border-gray-300 bg-gray-50 font-bold">
+                <TableRow className="border-t-2 border-slate-300 bg-slate-50 dark:bg-slate-900 font-bold">
                   <TableCell className="text-center">
                     <Badge variant="default" className="bg-gray-700 text-white">
                       Total
                     </Badge>
                   </TableCell>
-                  <TableCell className="font-bold text-gray-900">Grand Total</TableCell>
+                  <TableCell className="font-bold text-slate-900 dark:text-white">Grand Total</TableCell>
                   <TableCell className="font-bold text-purple-700">
                     {workforceData.reduce((sum, item) => sum + item.project_count, 0).toLocaleString()}
                   </TableCell>
@@ -361,13 +361,13 @@ export function RankingAnalysisTable() {
     <div className="overflow-x-auto">
       {projectLoading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-          <span className="ml-2 text-gray-600">Memuat data proyek...</span>
+          <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+          <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data proyek...</span>
         </div>
       ) : (
         <Table>
           <TableHeader>
-            <TableRow className="border-amber-200">
+            <TableRow className="border-teal-200">
               <TableHead className="table-header-orange w-20">Peringkat</TableHead>
               <TableHead className="table-header-orange">Kabupaten/Kota</TableHead>
               <TableHead className="table-header-orange">Jumlah Proyek</TableHead>
@@ -377,7 +377,7 @@ export function RankingAnalysisTable() {
           <TableBody>
             {projectData.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={4} className="text-center py-8 text-gray-500">
+                <TableCell colSpan={4} className="text-center py-8 text-slate-500 dark:text-slate-400">
                   Tidak ditemukan data untuk tahun {selectedYear}
                 </TableCell>
               </TableRow>
@@ -390,25 +390,25 @@ export function RankingAnalysisTable() {
                         {row.rank}
                       </Badge>
                     </TableCell>
-                    <TableCell className="font-medium text-gray-900">{row.region}</TableCell>
-                    <TableCell className="font-medium text-orange-600">{row.project_count.toLocaleString()}</TableCell>
-                    <TableCell className="font-medium text-orange-600">
+                    <TableCell className="font-medium text-slate-900 dark:text-white">{row.region}</TableCell>
+                    <TableCell className="font-medium text-teal-600">{row.project_count.toLocaleString()}</TableCell>
+                    <TableCell className="font-medium text-teal-600">
                       {formatCurrencyIDR(row.investment_idr)}
                     </TableCell>
                   </TableRow>
                 ))}
                 {/* Grand Total Row */}
-                <TableRow className="border-t-2 border-gray-300 bg-gray-50 font-bold">
+                <TableRow className="border-t-2 border-slate-300 bg-slate-50 dark:bg-slate-900 font-bold">
                   <TableCell className="text-center">
                     <Badge variant="default" className="bg-gray-700 text-white">
                       Total
                     </Badge>
                   </TableCell>
-                  <TableCell className="font-bold text-gray-900">Grand Total</TableCell>
-                  <TableCell className="font-bold text-orange-700">
+                  <TableCell className="font-bold text-slate-900 dark:text-white">Grand Total</TableCell>
+                  <TableCell className="font-bold text-teal-700">
                     {projectData.reduce((sum, item) => sum + item.project_count, 0).toLocaleString()}
                   </TableCell>
-                  <TableCell className="font-bold text-orange-700">
+                  <TableCell className="font-bold text-teal-700">
                     {formatCurrencyIDR(projectData.reduce((sum, item) => sum + item.investment_idr, 0))}
                   </TableCell>
                 </TableRow>
@@ -477,7 +477,7 @@ export function RankingAnalysisTable() {
 
   if (error) {
     return (
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="text-center py-8">
           <p className="text-red-600 mb-4">{error}</p>
           <Button onClick={() => window.location.reload()} variant="outline">
@@ -492,40 +492,40 @@ export function RankingAnalysisTable() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Realisasi Industri Pariwisata PMA, PMDN, dan Total PMA & PDN di Jawa Barat</h2>
-          <p className="text-gray-600 mt-1">Analisis komprehensif industri pariwisata di Jawa Barat Menurut Kabupaten/Kota</p>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Realisasi Industri Pariwisata PMA, PMDN, dan Total PMA & PDN di Jawa Barat</h2>
+          <p className="text-slate-600 dark:text-slate-400 mt-1">Analisis komprehensif industri pariwisata di Jawa Barat Menurut Kabupaten/Kota</p>
         </div>
       </div>
       {/* Summary Metrics */}
       {summaryMetrics && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">Total Proyek</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Total Proyek</div>
             <div className="text-2xl font-bold text-blue-700 mt-1">{summaryMetrics.totalProjects.toLocaleString()}</div>
           </div>
           <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">Total Investasi (USD)</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Total Investasi (USD)</div>
             <div className="text-lg font-bold text-green-700 mt-1">{formatCurrencyUSD(summaryMetrics.totalInvestmentUSD)}</div>
           </div>
           <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">Total Investasi (IDR)</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Total Investasi (IDR)</div>
             <div className="text-lg font-bold text-purple-700 mt-1">{formatCurrencyIDR(summaryMetrics.totalInvestmentIDR)}</div>
           </div>
-          <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">Total Tenaga Kerja</div>
-            <div className="text-2xl font-bold text-orange-700 mt-1">{summaryMetrics.totalWorkers.toLocaleString()}</div>
+          <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Total Tenaga Kerja</div>
+            <div className="text-2xl font-bold text-teal-700 mt-1">{summaryMetrics.totalWorkers.toLocaleString()}</div>
           </div>
         </div>
       )}
 
       {/* Filters */}
-      {/* <div className="minimal-card p-6">
+      {/* <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="flex flex-col lg:flex-row gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
             <Input
               placeholder="Cari kabupaten/kota..."
-              className="pl-10 border-gray-200 focus:border-gray-400"
+              className="pl-10 border-slate-200 focus:border-slate-400"
               value={searchRegion}
               onChange={(e) => setSearchRegion(e.target.value)}
             />
@@ -533,7 +533,7 @@ export function RankingAnalysisTable() {
 
           <div className="flex flex-wrap gap-3">
             <Select value={selectedYear.toString()} onValueChange={(value) => setSelectedYear(parseInt(value))}>
-              <SelectTrigger className="w-[120px] border-gray-200">
+              <SelectTrigger className="w-[120px] border-slate-200">
                 <SelectValue placeholder="Tahun" />
               </SelectTrigger>
               <SelectContent>
@@ -548,7 +548,7 @@ export function RankingAnalysisTable() {
             <Button 
               variant="outline" 
               size="sm" 
-              className="text-gray-600 border-gray-200 bg-transparent"
+              className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
               onClick={handleReset}
             >
               <RotateCcw className="w-4 h-4 mr-2" />
@@ -559,15 +559,15 @@ export function RankingAnalysisTable() {
       </div> */}
 
       {/* Main Table */}
-      <div className="minimal-card">
-        <div className="flex items-center justify-between p-6 border-b border-gray-100">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg">
+        <div className="flex items-center justify-between p-6 border-b border-slate-100">
           <div>
-            <h3 className="text-lg font-medium text-gray-900">Realisasi Industri Pariwisata di Jawa Barat</h3>
+            <h3 className="text-lg font-medium text-slate-900 dark:text-white">Realisasi Industri Pariwisata di Jawa Barat</h3>
           </div>
           <Button 
             variant="outline" 
             size="sm" 
-            className="text-gray-600 border-gray-200 bg-transparent"
+            className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
             onClick={() => exportData(getCurrentData(), `analisis_peringkat_${activeTab}_${selectedYear}.csv`)}
             disabled={getCurrentData().length === 0}
           >
@@ -608,8 +608,8 @@ export function RankingAnalysisTable() {
         </Tabs>
 
         {getCurrentData().length > 0 && (
-          <div className="flex items-center justify-between p-6 border-t border-gray-100">
-            <p className="text-sm text-gray-500">
+          <div className="flex items-center justify-between p-6 border-t border-slate-100">
+            <p className="text-sm text-slate-500 dark:text-slate-400">
               Menampilkan {((getCurrentPage() - 1) * pageSize) + 1}-{Math.min(getCurrentPage() * pageSize, getCurrentCount())} dari {getCurrentCount().toLocaleString()} data
             </p>
             <div className="flex items-center gap-2">
@@ -618,12 +618,12 @@ export function RankingAnalysisTable() {
                 size="sm" 
                 disabled={getCurrentPage() <= 1}
                 onClick={() => handlePageChange(getCurrentPage() - 1)}
-                className="text-gray-600 border-gray-200 bg-transparent"
+                className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
               >
                 <ChevronLeft className="w-4 h-4" />
                 Sebelumnya
               </Button>
-              <span className="text-sm text-gray-600 px-3">
+              <span className="text-sm text-slate-600 dark:text-slate-400 px-3">
                 Halaman {getCurrentPage()} dari {getCurrentTotalPages()}
               </span>
               <Button 
@@ -631,7 +631,7 @@ export function RankingAnalysisTable() {
                 size="sm" 
                 disabled={getCurrentPage() >= getCurrentTotalPages()}
                 onClick={() => handlePageChange(getCurrentPage() + 1)}
-                className="text-gray-600 border-gray-200 bg-transparent"
+                className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
               >
                 Selanjutnya
                 <ChevronRight className="w-4 h-4" />

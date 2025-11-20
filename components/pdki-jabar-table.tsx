@@ -173,7 +173,7 @@ export function PDKIJabarTable() {
 
   if (error) {
     return (
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="text-center py-8">
           <p className="text-red-600 mb-4">{error}</p>
           <Button onClick={() => fetchData(currentPage)} variant="outline">
@@ -187,13 +187,13 @@ export function PDKIJabarTable() {
   return (
     <div className="space-y-6">
       {/* Filters */}
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="flex flex-col lg:flex-row gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
             <Input
               placeholder="Cari nomor permohonan, nama merek, nama pemilik, atau alamat pemilik..."
-              className="pl-10 border-gray-200 focus:border-gray-400"
+              className="pl-10 border-slate-200 focus:border-slate-400"
               value={filters.search}
               onChange={(e) => handleFilterChange("search", e.target.value)}
             />
@@ -201,7 +201,7 @@ export function PDKIJabarTable() {
 
           <div className="flex flex-wrap gap-3">
             <Select value={filters.extract_tahun_pengumuman} onValueChange={(value) => handleFilterChange("extract_tahun_pengumuman", value)}>
-              <SelectTrigger className="w-[120px] border-gray-200">
+              <SelectTrigger className="w-[120px] border-slate-200">
                 <SelectValue placeholder="Tahun" />
               </SelectTrigger>
               {/* <SelectContent>
@@ -221,7 +221,7 @@ export function PDKIJabarTable() {
             </Select>
 
             <Select value={filters.kabupaten_kota} onValueChange={(value) => handleFilterChange("kabupaten_kota", value)}>
-              <SelectTrigger className="w-[160px] border-gray-200">
+              <SelectTrigger className="w-[160px] border-slate-200">
                 <SelectValue placeholder="Kabupaten/Kota" />
               </SelectTrigger>
               <SelectContent>
@@ -235,7 +235,7 @@ export function PDKIJabarTable() {
             <Button 
               variant="outline" 
               size="sm" 
-              className="text-gray-600 border-gray-200 bg-transparent"
+              className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
               onClick={handleReset}
             >
               <RotateCcw className="w-4 h-4 mr-2" />
@@ -246,18 +246,18 @@ export function PDKIJabarTable() {
       </div>
 
       {/* Main Table */}
-      <div className="minimal-card">
-        <div className="flex items-center justify-between p-6 border-b border-gray-100">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg">
+        <div className="flex items-center justify-between p-6 border-b border-slate-100">
           <div>
-            <h3 className="text-lg font-medium text-gray-900">Data PDKI Jawa Barat 2020 - 2025</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="text-lg font-medium text-slate-900 dark:text-white">Data PDKI Jawa Barat 2020 - 2025</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
               Penelusuran Data dan Informasi Kekayaan Intelektual Periode 2020 - 2025
             </p>
           </div>
           <Button 
             variant="outline" 
             size="sm" 
-            className="text-gray-600 border-gray-200 bg-transparent"
+            className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
             onClick={exportData}
             disabled={loading || data.length === 0}
           >
@@ -269,13 +269,13 @@ export function PDKIJabarTable() {
         <div className="overflow-x-auto">
           {loading ? (
             <div className="flex items-center justify-center py-12">
-              <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-              <span className="ml-2 text-gray-600">Memuat data...</span>
+              <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+              <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data...</span>
             </div>
           ) : (
             <Table>
               <TableHeader>
-                <TableRow className="border-amber-200">
+                <TableRow className="border-teal-200">
                   <TableHead className="table-header-orange">ID Permohonan</TableHead>
                   <TableHead className="table-header-orange">Nomor Permohonan</TableHead>
                   <TableHead className="table-header-orange">Tanggal Permohonan</TableHead>
@@ -303,26 +303,26 @@ export function PDKIJabarTable() {
               <TableBody>
                 {data.length === 0 ? (
                   <TableRow>
-                    <TableCell colSpan={18} className="text-center py-8 text-gray-500">
+                    <TableCell colSpan={18} className="text-center py-8 text-slate-500 dark:text-slate-400">
                       Tidak ditemukan data
                     </TableCell>
                   </TableRow>
                 ) : (
                   data.map((row) => (
                     <TableRow key={row.id} className="table-row-yellow">
-                      <TableCell className="font-mono text-sm text-gray-600">{row.id_permohonan || '-'}</TableCell>
-                      <TableCell className="font-mono text-sm text-gray-600">{row.nomor_permohonan || '-'}</TableCell>
-                      <TableCell className="text-sm text-gray-600">{formatDate(row.tanggal_permohonan)}</TableCell>
-                      <TableCell className="font-mono text-sm text-gray-600">{row.nomor_pengumuman || '-'}</TableCell>
-                      <TableCell className="text-sm text-gray-600">{formatDate(row.tanggal_pengumuman)}</TableCell>
-                      <TableCell className="text-sm text-gray-600">{formatDate(row.tanggal_dimulai_perlindungan)}</TableCell>
-                      <TableCell className="text-sm text-gray-600">{formatDate(row.tanggal_berakhir_perlindungan)}</TableCell>
-                      <TableCell className="font-mono text-sm text-gray-600">{row.nomor_pendaftaran || '-'}</TableCell>
-                      <TableCell className="text-sm text-gray-600">{formatDate(row.tanggal_pendaftaran)}</TableCell>
-                      <TableCell className=" text-gray-900 max-w-xs truncate" title={row.translasi || '-'}>
+                      <TableCell className="font-mono text-sm text-slate-600 dark:text-slate-400">{row.id_permohonan || '-'}</TableCell>
+                      <TableCell className="font-mono text-sm text-slate-600 dark:text-slate-400">{row.nomor_permohonan || '-'}</TableCell>
+                      <TableCell className="text-sm text-slate-600 dark:text-slate-400">{formatDate(row.tanggal_permohonan)}</TableCell>
+                      <TableCell className="font-mono text-sm text-slate-600 dark:text-slate-400">{row.nomor_pengumuman || '-'}</TableCell>
+                      <TableCell className="text-sm text-slate-600 dark:text-slate-400">{formatDate(row.tanggal_pengumuman)}</TableCell>
+                      <TableCell className="text-sm text-slate-600 dark:text-slate-400">{formatDate(row.tanggal_dimulai_perlindungan)}</TableCell>
+                      <TableCell className="text-sm text-slate-600 dark:text-slate-400">{formatDate(row.tanggal_berakhir_perlindungan)}</TableCell>
+                      <TableCell className="font-mono text-sm text-slate-600 dark:text-slate-400">{row.nomor_pendaftaran || '-'}</TableCell>
+                      <TableCell className="text-sm text-slate-600 dark:text-slate-400">{formatDate(row.tanggal_pendaftaran)}</TableCell>
+                      <TableCell className=" text-slate-900 dark:text-white max-w-xs truncate" title={row.translasi || '-'}>
                         {row.translasi || '-'}
                       </TableCell>
-                      <TableCell className="font-medium text-gray-900 max-w-xs truncate" title={row.nama_merek}>
+                      <TableCell className="font-medium text-slate-900 dark:text-white max-w-xs truncate" title={row.nama_merek}>
                         {row.nama_merek}
                       </TableCell>
                       <TableCell>
@@ -332,32 +332,32 @@ export function PDKIJabarTable() {
                           </Badge>
                         ) : '-'}
                       </TableCell>
-                      <TableCell className="font-medium text-gray-900 max-w-xs truncate" title={row.nama_pemilik_tm}>
+                      <TableCell className="font-medium text-slate-900 dark:text-white max-w-xs truncate" title={row.nama_pemilik_tm}>
                         {row.nama_pemilik_tm}
                       </TableCell>
-                      <TableCell className="font-medium text-gray-900 max-w-xs truncate" title={row.alamat_pemilik_tm}>
+                      <TableCell className="font-medium text-slate-900 dark:text-white max-w-xs truncate" title={row.alamat_pemilik_tm}>
                         {row.alamat_pemilik_tm}
                       </TableCell>
-                      <TableCell className="font-medium text-gray-900 max-w-xs truncate" title={row.kabupaten_kota}>
+                      <TableCell className="font-medium text-slate-900 dark:text-white max-w-xs truncate" title={row.kabupaten_kota}>
                         {row.kabupaten_kota}
                       </TableCell>
-                      <TableCell className="text-gray-600">{row.negara_asal}</TableCell>
-                      <TableCell className=" text-gray-900 max-w-xs truncate" title={row.kode_negara}>
+                      <TableCell className="text-slate-600 dark:text-slate-400">{row.negara_asal}</TableCell>
+                      <TableCell className=" text-slate-900 dark:text-white max-w-xs truncate" title={row.kode_negara}>
                         {row.kode_negara}
                       </TableCell>
-                      <TableCell className="font-medium max-w-xs truncate text-gray-600" title={row.nama_konsultan || ''}>
+                      <TableCell className="font-medium max-w-xs truncate text-slate-600 dark:text-slate-400" title={row.nama_konsultan || ''}>
                         {row.nama_konsultan || '-'}
                       </TableCell>
-                      <TableCell className="font-medium max-w-xs truncate text-gray-600" title={row.alamat_konsultan || ''}>
+                      <TableCell className="font-medium max-w-xs truncate text-slate-600 dark:text-slate-400" title={row.alamat_konsultan || ''}>
                         {row.alamat_konsultan || '-'}
                       </TableCell>
-                      <TableCell className="max-w-xs truncate text-gray-600" title={row.provinsi || ''}>
+                      <TableCell className="max-w-xs truncate text-slate-600 dark:text-slate-400" title={row.provinsi || ''}>
                         {row.provinsi || '-'}
                       </TableCell>
-                      <TableCell className="max-w-xs truncate text-gray-600" title={row.deskripsi_kelas || ''}>
+                      <TableCell className="max-w-xs truncate text-slate-600 dark:text-slate-400" title={row.deskripsi_kelas || ''}>
                         {row.deskripsi_kelas || '-'}
                       </TableCell>
-                      <TableCell className=" text-gray-600" title={row.detail_url || ''}>
+                      <TableCell className=" text-slate-600 dark:text-slate-400" title={row.detail_url || ''}>
                         {row.detail_url || '-'}
                       </TableCell>
                     </TableRow>
@@ -369,8 +369,8 @@ export function PDKIJabarTable() {
         </div>
 
         {!loading && data.length > 0 && (
-          <div className="flex items-center justify-between p-6 border-t border-gray-100">
-            <p className="text-sm text-gray-500">
+          <div className="flex items-center justify-between p-6 border-t border-slate-100">
+            <p className="text-sm text-slate-500 dark:text-slate-400">
               Menampilkan {((currentPage - 1) * pageSize) + 1}-{Math.min(currentPage * pageSize, totalCount)} dari {totalCount.toLocaleString()} data
             </p>
             <div className="flex items-center gap-2">
@@ -379,12 +379,12 @@ export function PDKIJabarTable() {
                 size="sm" 
                 disabled={currentPage <= 1}
                 onClick={() => handlePageChange(currentPage - 1)}
-                className="text-gray-600 border-gray-200 bg-transparent"
+                className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
               >
                 <ChevronLeft className="w-4 h-4" />
                 Sebelumnya
               </Button>
-              <span className="text-sm text-gray-600 px-3">
+              <span className="text-sm text-slate-600 dark:text-slate-400 px-3">
                 Halaman {currentPage} dari {totalPages}
               </span>
               <Button 
@@ -392,7 +392,7 @@ export function PDKIJabarTable() {
                 size="sm" 
                 disabled={currentPage >= totalPages}
                 onClick={() => handlePageChange(currentPage + 1)}
-                className="text-gray-600 border-gray-200 bg-transparent"
+                className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
               >
                 Selanjutnya
                 <ChevronRight className="w-4 h-4" />

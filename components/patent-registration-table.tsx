@@ -201,7 +201,7 @@ export function PatentRegistrationTable() {
 
   if (error) {
     return (
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="text-center py-8">
           <p className="text-red-600 mb-4">{error}</p>
           <Button onClick={() => fetchData(currentPage)} variant="outline">
@@ -217,10 +217,10 @@ export function PatentRegistrationTable() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
             Jumlah Hak Kekayaan Intelektual di Jawa Barat
           </h2>
-          <p className="text-gray-600 mt-1">
+          <p className="text-slate-600 dark:text-slate-400 mt-1">
             Data pendaftaran Hak Kekayaan Intelektual di Jawa Barat periode
             2020-2025
           </p>
@@ -231,44 +231,44 @@ export function PatentRegistrationTable() {
       {summaryMetrics && (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">2020</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">2020</div>
             <div className="text-2xl font-bold text-blue-700 mt-1">
               {loading ? "..." : summaryMetrics.total2020.toLocaleString()}
             </div>
           </div>
           <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">2021</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">2021</div>
             <div className="text-2xl font-bold text-green-700 mt-1">
               {loading ? "..." : summaryMetrics.total2021.toLocaleString()}
             </div>
           </div>
           <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">2022</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">2022</div>
             <div className="text-2xl font-bold text-purple-700 mt-1">
               {loading ? "..." : summaryMetrics.total2022.toLocaleString()}
             </div>
           </div>
-          <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">2023</div>
-            <div className="text-2xl font-bold text-orange-700 mt-1">
+          <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">2023</div>
+            <div className="text-2xl font-bold text-teal-700 mt-1">
               {loading ? "..." : summaryMetrics.total2023.toLocaleString()}
             </div>
           </div>
           <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">2024</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">2024</div>
             <div className="text-2xl font-bold text-red-700 mt-1">
               {loading ? "..." : summaryMetrics.total2024.toLocaleString()}
             </div>
           </div>
           <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">2025</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">2025</div>
             <div className="text-2xl font-bold text-indigo-700 mt-1">
               {loading ? "..." : summaryMetrics.total2025.toLocaleString()}
             </div>
           </div>
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">Grand Total</div>
-            <div className="text-2xl font-bold text-gray-700 mt-1">
+          <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200 rounded-lg p-4">
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Grand Total</div>
+            <div className="text-2xl font-bold text-slate-700 dark:text-slate-300 mt-1">
               {loading ? "..." : summaryMetrics.grandTotal.toLocaleString()}
             </div>
           </div>
@@ -296,13 +296,13 @@ export function PatentRegistrationTable() {
 
         <TabsContent value="table" className="mt-6">
           {/* Filters */}
-          <div className="minimal-card p-6 mb-6">
+          <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6 mb-6">
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                 <Input
                   placeholder="Cari kabupaten/kota..."
-                  className="pl-10 border-gray-200 focus:border-gray-400"
+                  className="pl-10 border-slate-200 focus:border-slate-400"
                   value={filters.search}
                   onChange={(e) => handleFilterChange("search", e.target.value)}
                 />
@@ -313,7 +313,7 @@ export function PatentRegistrationTable() {
                   value={filters.region}
                   onValueChange={(value) => handleFilterChange("region", value)}
                 >
-                  <SelectTrigger className="w-[180px] border-gray-200">
+                  <SelectTrigger className="w-[180px] border-slate-200">
                     <SelectValue placeholder="Kabupaten/Kota" />
                   </SelectTrigger>
                   <SelectContent>
@@ -329,7 +329,7 @@ export function PatentRegistrationTable() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="text-gray-600 border-gray-200 bg-transparent"
+                  className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
                   onClick={handleReset}
                 >
                   <RotateCcw className="w-4 h-4 mr-2" />
@@ -340,13 +340,13 @@ export function PatentRegistrationTable() {
           </div>
 
           {/* Main Table */}
-          <div className="minimal-card">
-            <div className="flex items-center justify-between p-6 border-b border-gray-100">
+          <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg">
+            <div className="flex items-center justify-between p-6 border-b border-slate-100">
               <div>
-                <h3 className="text-lg font-medium text-gray-900">
+                <h3 className="text-lg font-medium text-slate-900 dark:text-white">
                   Jumlah Hak Kekayaan Intelektual yang Terdaftar di Jawa Barat
                 </h3>
-                <p className="text-sm text-gray-500 mt-1">
+                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                   Data pendaftaran Hak Kekayaan Intelektual berdasarkan
                   kabupaten/kota di Jawa Barat
                 </p>
@@ -354,7 +354,7 @@ export function PatentRegistrationTable() {
               <Button
                 variant="outline"
                 size="sm"
-                className="text-gray-600 border-gray-200 bg-transparent"
+                className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
                 onClick={exportData}
                 disabled={loading || data.length === 0}
               >
@@ -366,13 +366,13 @@ export function PatentRegistrationTable() {
             <div className="overflow-x-auto">
               {loading ? (
                 <div className="flex items-center justify-center py-12">
-                  <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-                  <span className="ml-2 text-gray-600">Memuat data...</span>
+                  <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+                  <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data...</span>
                 </div>
               ) : (
                 <Table>
                   <TableHeader>
-                    <TableRow className="border-amber-200">
+                    <TableRow className="border-teal-200">
                       <TableHead className="table-header-orange sticky left-0 z-10">
                         Kabupaten/Kota
                       </TableHead>
@@ -404,7 +404,7 @@ export function PatentRegistrationTable() {
                       <TableRow>
                         <TableCell
                           colSpan={8}
-                          className="text-center py-8 text-gray-500"
+                          className="text-center py-8 text-slate-500 dark:text-slate-400"
                         >
                           Tidak ditemukan data
                         </TableCell>
@@ -413,10 +413,10 @@ export function PatentRegistrationTable() {
                       <>
                         {data.map((row) => (
                           <TableRow key={row.id} className="table-row-yellow">
-                            <TableCell className="font-medium text-gray-900 sticky left-0 bg-amber-50 z-10">
+                            <TableCell className="font-medium text-slate-900 dark:text-white sticky left-0 bg-teal-50 z-10">
                               {row.region}
                             </TableCell>
-                            <TableCell className="text-center text-blue-600 font-medium">
+                            <TableCell className="text-center text-teal-600 font-medium">
                               {row.patents_2020 || 0}
                             </TableCell>
                             <TableCell className="text-center text-green-600 font-medium">
@@ -425,7 +425,7 @@ export function PatentRegistrationTable() {
                             <TableCell className="text-center text-purple-600 font-medium">
                               {row.patents_2022 || 0}
                             </TableCell>
-                            <TableCell className="text-center text-orange-600 font-medium">
+                            <TableCell className="text-center text-teal-600 font-medium">
                               {row.patents_2023 || 0}
                             </TableCell>
                             <TableCell className="text-center text-red-600 font-medium">
@@ -434,7 +434,7 @@ export function PatentRegistrationTable() {
                             <TableCell className="text-center text-indigo-600 font-medium">
                               {row.patents_2025 || 0}
                             </TableCell>
-                            <TableCell className="text-center font-bold text-gray-900">
+                            <TableCell className="text-center font-bold text-slate-900 dark:text-white">
                               {row.total_patents.toLocaleString()}
                             </TableCell>
                           </TableRow>
@@ -442,8 +442,8 @@ export function PatentRegistrationTable() {
 
                         {/* Grand Total Row */}
                         {summaryMetrics && (
-                          <TableRow className="border-t-2 border-gray-300 bg-blue-50 font-bold">
-                            <TableCell className="font-bold text-gray-900 sticky left-0 bg-blue-50 z-10">
+                          <TableRow className="border-t-2 border-slate-300 bg-blue-50 font-bold">
+                            <TableCell className="font-bold text-slate-900 dark:text-white sticky left-0 bg-blue-50 z-10">
                               Grand Total
                             </TableCell>
                             <TableCell className="text-center font-bold text-blue-700">
@@ -455,7 +455,7 @@ export function PatentRegistrationTable() {
                             <TableCell className="text-center font-bold text-purple-700">
                               {summaryMetrics.total2022.toLocaleString()}
                             </TableCell>
-                            <TableCell className="text-center font-bold text-orange-700">
+                            <TableCell className="text-center font-bold text-teal-700">
                               {summaryMetrics.total2023.toLocaleString()}
                             </TableCell>
                             <TableCell className="text-center font-bold text-red-700">
@@ -464,7 +464,7 @@ export function PatentRegistrationTable() {
                             <TableCell className="text-center font-bold text-indigo-700">
                               {summaryMetrics.total2025.toLocaleString()}
                             </TableCell>
-                            <TableCell className="text-center font-bold text-gray-900">
+                            <TableCell className="text-center font-bold text-slate-900 dark:text-white">
                               {summaryMetrics.grandTotal.toLocaleString()}
                             </TableCell>
                           </TableRow>
@@ -477,8 +477,8 @@ export function PatentRegistrationTable() {
             </div>
 
             {!loading && data.length > 0 && (
-              <div className="flex items-center justify-between p-6 border-t border-gray-100">
-                <p className="text-sm text-gray-500">
+              <div className="flex items-center justify-between p-6 border-t border-slate-100">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   Menampilkan {(currentPage - 1) * pageSize + 1}-
                   {Math.min(currentPage * pageSize, totalCount)} dari{" "}
                   {totalCount.toLocaleString()} data
@@ -489,12 +489,12 @@ export function PatentRegistrationTable() {
                     size="sm"
                     disabled={currentPage <= 1}
                     onClick={() => handlePageChange(currentPage - 1)}
-                    className="text-gray-600 border-gray-200 bg-transparent"
+                    className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
                   >
                     <ChevronLeft className="w-4 h-4" />
                     Sebelumnya
                   </Button>
-                  <span className="text-sm text-gray-600 px-3">
+                  <span className="text-sm text-slate-600 dark:text-slate-400 px-3">
                     Halaman {currentPage} dari {totalPages}
                   </span>
                   <Button
@@ -502,7 +502,7 @@ export function PatentRegistrationTable() {
                     size="sm"
                     disabled={currentPage >= totalPages}
                     onClick={() => handlePageChange(currentPage + 1)}
-                    className="text-gray-600 border-gray-200 bg-transparent"
+                    className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
                   >
                     Selanjutnya
                     <ChevronRight className="w-4 h-4" />
@@ -523,8 +523,8 @@ export function PatentRegistrationTable() {
             <CardContent>
               {loading ? (
                 <div className="flex items-center justify-center py-12">
-                  <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-                  <span className="ml-2 text-gray-600">Memuat grafik...</span>
+                  <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+                  <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat grafik...</span>
                 </div>
               ) : (
                 <ResponsiveContainer width="100%" height={400}>
@@ -563,8 +563,8 @@ export function PatentRegistrationTable() {
             <CardContent>
               {loading ? (
                 <div className="flex items-center justify-center py-12">
-                  <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-                  <span className="ml-2 text-gray-600">Memuat grafik...</span>
+                  <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+                  <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat grafik...</span>
                 </div>
               ) : (
                 <ResponsiveContainer width="100%" height={400}>

@@ -208,13 +208,13 @@ export function SubsectorContentTable() {
     <div className="overflow-x-auto">
       {investmentLoading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-          <span className="ml-2 text-gray-600">Loading investment data...</span>
+          <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+          <span className="ml-2 text-slate-600 dark:text-slate-400">Loading investment data...</span>
         </div>
       ) : (
         <Table>
           <TableHeader>
-            <TableRow className="border-amber-200">
+            <TableRow className="border-teal-200">
               <TableHead className="table-header-orange w-20">Peringkat</TableHead>
               <TableHead className="table-header-orange">Subsektor</TableHead>
               <TableHead className="table-header-orange">Tambahan Investasi (Rp)</TableHead>
@@ -224,7 +224,7 @@ export function SubsectorContentTable() {
           <TableBody>
             {investmentData.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={4} className="text-center py-8 text-gray-500">
+                <TableCell colSpan={4} className="text-center py-8 text-slate-500 dark:text-slate-400">
                   No investment data found for {selectedYear}
                 </TableCell>
               </TableRow>
@@ -236,7 +236,7 @@ export function SubsectorContentTable() {
                       {row.rank}
                     </Badge>
                   </TableCell>
-                  <TableCell className="font-medium text-gray-900">{row.subsector}</TableCell>
+                  <TableCell className="font-medium text-slate-900 dark:text-white">{row.subsector}</TableCell>
                   <TableCell className="font-medium text-green-600">
                     {formatCurrency(row.investment_amount)}
                   </TableCell>
@@ -258,13 +258,13 @@ export function SubsectorContentTable() {
     <div className="overflow-x-auto">
       {employmentLoading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-          <span className="ml-2 text-gray-600">Loading employment data...</span>
+          <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+          <span className="ml-2 text-slate-600 dark:text-slate-400">Loading employment data...</span>
         </div>
       ) : (
         <Table>
           <TableHeader>
-            <TableRow className="border-amber-200">
+            <TableRow className="border-teal-200">
               <TableHead className="table-header-orange w-20">Peringkat</TableHead>
               <TableHead className="table-header-orange">Subsektor</TableHead>
               <TableHead className="table-header-orange">Jumlah Tenaga Kerja</TableHead>
@@ -274,7 +274,7 @@ export function SubsectorContentTable() {
           <TableBody>
             {employmentData.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={4} className="text-center py-8 text-gray-500">
+                <TableCell colSpan={4} className="text-center py-8 text-slate-500 dark:text-slate-400">
                   No employment data found for {selectedYear}
                 </TableCell>
               </TableRow>
@@ -286,7 +286,7 @@ export function SubsectorContentTable() {
                       {row.rank}
                     </Badge>
                   </TableCell>
-                  <TableCell className="font-medium text-gray-900">{row.subsector}</TableCell>
+                  <TableCell className="font-medium text-slate-900 dark:text-white">{row.subsector}</TableCell>
                   <TableCell className="font-medium text-purple-600">
                     {row.workers_count.toLocaleString()}
                   </TableCell>
@@ -308,13 +308,13 @@ export function SubsectorContentTable() {
     <div className="overflow-x-auto">
       {projectLoading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-          <span className="ml-2 text-gray-600">Loading project data...</span>
+          <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+          <span className="ml-2 text-slate-600 dark:text-slate-400">Loading project data...</span>
         </div>
       ) : (
         <Table>
           <TableHeader>
-            <TableRow className="border-amber-200">
+            <TableRow className="border-teal-200">
               <TableHead className="table-header-orange w-20">Peringkat</TableHead>
               <TableHead className="table-header-orange">Subsektor</TableHead>
               <TableHead className="table-header-orange">Jumlah Proyek</TableHead>
@@ -324,7 +324,7 @@ export function SubsectorContentTable() {
           <TableBody>
             {projectData.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={4} className="text-center py-8 text-gray-500">
+                <TableCell colSpan={4} className="text-center py-8 text-slate-500 dark:text-slate-400">
                   No project data found for {selectedYear}
                 </TableCell>
               </TableRow>
@@ -336,12 +336,12 @@ export function SubsectorContentTable() {
                       {row.rank}
                     </Badge>
                   </TableCell>
-                  <TableCell className="font-medium text-gray-900">{row.subsector}</TableCell>
-                  <TableCell className="font-medium text-orange-600">
+                  <TableCell className="font-medium text-slate-900 dark:text-white">{row.subsector}</TableCell>
+                  <TableCell className="font-medium text-teal-600">
                     {row.project_count.toLocaleString()}
                   </TableCell>
                   <TableCell className="text-center">
-                    <Badge variant="secondary" className="bg-orange-100 text-orange-700">
+                    <Badge variant="secondary" className="bg-teal-100 text-teal-700">
                       {row.percentage.toFixed(2)}%
                     </Badge>
                   </TableCell>
@@ -406,7 +406,7 @@ export function SubsectorContentTable() {
 
   if (error) {
     return (
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="text-center py-8">
           <p className="text-red-600 mb-4">{error}</p>
           <Button onClick={() => window.location.reload()} variant="outline">
@@ -418,18 +418,18 @@ export function SubsectorContentTable() {
   }
 
   return (
-    <div className="minimal-card">
-      <div className="flex items-center justify-between p-6 border-b border-gray-100">
+    <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg">
+      <div className="flex items-center justify-between p-6 border-b border-slate-100">
         <div>
-          <h3 className="text-lg font-medium text-gray-900">Peringkat Berdasarkan Subsektor PMA/PMDN</h3>
-          <p className="text-sm text-gray-500 mt-1">
+          <h3 className="text-lg font-medium text-slate-900 dark:text-white">Peringkat Berdasarkan Subsektor PMA/PMDN</h3>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
             Data ranking berdasarkan investasi, tenaga kerja, dan jumlah proyek
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <Select value={selectedYear.toString()} onValueChange={(value) => setSelectedYear(parseInt(value))}>
-            <SelectTrigger className="w-[120px] border-gray-200">
+            <SelectTrigger className="w-[120px] border-slate-200">
               <SelectValue placeholder="Tahun" />
             </SelectTrigger>
             <SelectContent>
@@ -443,7 +443,7 @@ export function SubsectorContentTable() {
           <Button 
             variant="outline" 
             size="sm" 
-            className="text-gray-600 border-gray-200 bg-transparent"
+            className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
             onClick={() => exportData(getCurrentData(), `ranking_${activeTab}_${selectedYear}.csv`)}
             disabled={getCurrentData().length === 0}
           >
@@ -485,8 +485,8 @@ export function SubsectorContentTable() {
       </Tabs>
 
       {getCurrentData().length > 0 && (
-        <div className="flex items-center justify-between p-6 border-t border-gray-100">
-          <p className="text-sm text-gray-500">
+        <div className="flex items-center justify-between p-6 border-t border-slate-100">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             Menampilkan {((getCurrentPage() - 1) * pageSize) + 1}-{Math.min(getCurrentPage() * pageSize, getCurrentCount())} dari {getCurrentCount().toLocaleString()} data
           </p>
           <div className="flex items-center gap-2">
@@ -495,12 +495,12 @@ export function SubsectorContentTable() {
               size="sm" 
               disabled={getCurrentPage() <= 1}
               onClick={() => handlePageChange(getCurrentPage() - 1)}
-              className="text-gray-600 border-gray-200 bg-transparent"
+              className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
             >
               <ChevronLeft className="w-4 h-4" />
               Sebelumnya
             </Button>
-            <span className="text-sm text-gray-600 px-3">
+            <span className="text-sm text-slate-600 dark:text-slate-400 px-3">
               Halaman {getCurrentPage()} dari {getCurrentTotalPages()}
             </span>
             <Button 
@@ -508,7 +508,7 @@ export function SubsectorContentTable() {
               size="sm" 
               disabled={getCurrentPage() >= getCurrentTotalPages()}
               onClick={() => handlePageChange(getCurrentPage() + 1)}
-              className="text-gray-600 border-gray-200 bg-transparent"
+              className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
             >
               Selanjutnya
               <ChevronRight className="w-4 h-4" />

@@ -177,7 +177,7 @@ export function EkrafAnalysisTable() {
 
   if (error) {
     return (
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="text-center py-8">
           <p className="text-red-600 mb-4">{error}</p>
           <Button onClick={() => fetchData(currentPage)} variant="outline">
@@ -194,40 +194,40 @@ export function EkrafAnalysisTable() {
       {summaryMetrics && (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">Total Perusahaan</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Total Perusahaan</div>
             <div className="text-2xl font-bold text-blue-700 mt-1">{summaryMetrics.totalCompanies.toLocaleString()}</div>
           </div>
           <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">EKRAF Companies</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">EKRAF Companies</div>
             <div className="text-2xl font-bold text-green-700 mt-1">{summaryMetrics.totalEkrafCompanies.toLocaleString()}</div>
           </div>
           <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">Total Investasi (USD)</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Total Investasi (USD)</div>
             <div className="text-lg font-bold text-purple-700 mt-1">{formatCurrencyUSD(summaryMetrics.totalInvestmentUSD)}</div>
           </div>
-          <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">Total Proyek</div>
-            <div className="text-2xl font-bold text-orange-700 mt-1">{summaryMetrics.totalProjects.toLocaleString()}</div>
+          <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Total Proyek</div>
+            <div className="text-2xl font-bold text-teal-700 mt-1">{summaryMetrics.totalProjects.toLocaleString()}</div>
           </div>
           <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">Total TK</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Total TK</div>
             <div className="text-2xl font-bold text-indigo-700 mt-1">{summaryMetrics.totalTK.toLocaleString()}</div>
           </div>
           <div className="bg-pink-50 border border-pink-200 rounded-lg p-4">
-            <div className="text-sm font-medium text-gray-600">EKRAF Percentage</div>
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-400">EKRAF Percentage</div>
             <div className="text-2xl font-bold text-pink-700 mt-1">{summaryMetrics.ekrafPercentage.toFixed(1)}%</div>
           </div>
         </div>
       )}
 
       {/* Filters */}
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="flex flex-col lg:flex-row gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
             <Input
               placeholder="Cari nama perusahaan, no izin, atau KBLI..."
-              className="pl-10 border-gray-200 focus:border-gray-400"
+              className="pl-10 border-slate-200 focus:border-slate-400"
               value={filters.search}
               onChange={(e) => handleFilterChange("search", e.target.value)}
             />
@@ -235,7 +235,7 @@ export function EkrafAnalysisTable() {
 
           <div className="flex flex-wrap gap-3">
             <Select value={filters.tahun} onValueChange={(value) => handleFilterChange("tahun", value)}>
-              <SelectTrigger className="w-[120px] border-gray-200">
+              <SelectTrigger className="w-[120px] border-slate-200">
                 <SelectValue placeholder="Tahun" />
               </SelectTrigger>
               <SelectContent>
@@ -249,7 +249,7 @@ export function EkrafAnalysisTable() {
             </Select>
 
             <Select value={filters.sektor} onValueChange={(value) => handleFilterChange("sektor", value)}>
-              <SelectTrigger className="w-[120px] border-gray-200">
+              <SelectTrigger className="w-[120px] border-slate-200">
                 <SelectValue placeholder="Sektor" />
               </SelectTrigger>
               <SelectContent>
@@ -263,7 +263,7 @@ export function EkrafAnalysisTable() {
             </Select>
 
             <Select value={filters.kabupaten_kota} onValueChange={(value) => handleFilterChange("kabupaten_kota", value)}>
-              <SelectTrigger className="w-[160px] border-gray-200">
+              <SelectTrigger className="w-[160px] border-slate-200">
                 <SelectValue placeholder="Kabupaten/Kota" />
               </SelectTrigger>
               <SelectContent>
@@ -277,7 +277,7 @@ export function EkrafAnalysisTable() {
             </Select>
 
             <Select value={filters.subsektor} onValueChange={(value) => handleFilterChange("subsektor", value)}>
-              <SelectTrigger className="w-[140px] border-gray-200">
+              <SelectTrigger className="w-[140px] border-slate-200">
                 <SelectValue placeholder="Subsektor" />
               </SelectTrigger>
               <SelectContent>
@@ -291,7 +291,7 @@ export function EkrafAnalysisTable() {
             </Select>
 
             <Select value={filters.status_modal} onValueChange={(value) => handleFilterChange("status_modal", value)}>
-              <SelectTrigger className="w-[120px] border-gray-200">
+              <SelectTrigger className="w-[120px] border-slate-200">
                 <SelectValue placeholder="Status Modal" />
               </SelectTrigger>
               <SelectContent>
@@ -302,7 +302,7 @@ export function EkrafAnalysisTable() {
             </Select>
 
             <Select value={filters.is_ekraf} onValueChange={(value) => handleFilterChange("is_ekraf", value)}>
-              <SelectTrigger className="w-[120px] border-gray-200">
+              <SelectTrigger className="w-[120px] border-slate-200">
                 <SelectValue placeholder="EKRAF" />
               </SelectTrigger>
               <SelectContent>
@@ -315,7 +315,7 @@ export function EkrafAnalysisTable() {
             <Button 
               variant="outline" 
               size="sm" 
-              className="text-gray-600 border-gray-200 bg-transparent"
+              className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
               onClick={handleReset}
             >
               <RotateCcw className="w-4 h-4 mr-2" />
@@ -326,18 +326,18 @@ export function EkrafAnalysisTable() {
       </div>
 
       {/* Main Table */}
-      <div className="minimal-card">
-        <div className="flex items-center justify-between p-6 border-b border-gray-100">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg">
+        <div className="flex items-center justify-between p-6 border-b border-slate-100">
           <div>
-            <h3 className="text-lg font-medium text-gray-900">Analisis EKRAF Jawa Barat</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="text-lg font-medium text-slate-900 dark:text-white">Analisis EKRAF Jawa Barat</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
               Data komprehensif analisis industri pariwisata Jawa Barat
             </p>
           </div>
           <Button 
             variant="outline" 
             size="sm" 
-            className="text-gray-600 border-gray-200 bg-transparent"
+            className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
             onClick={exportData}
             disabled={loading || data.length === 0}
           >
@@ -349,67 +349,67 @@ export function EkrafAnalysisTable() {
         <div className="overflow-x-auto">
           {loading ? (
             <div className="flex items-center justify-center py-12">
-              <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-              <span className="ml-2 text-gray-600">Memuat data...</span>
+              <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+              <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data...</span>
             </div>
           ) : (
             <Table>
               <TableHeader>
-                <TableRow className="border-gray-100">
-                  <TableHead className="font-medium text-gray-700">Tahun</TableHead>
-                  <TableHead className="font-medium text-gray-700">Sektor</TableHead>
-                  <TableHead className="font-medium text-gray-700">Nama Perusahaan</TableHead>
-                  <TableHead className="font-medium text-gray-700">Kabupaten/Kota</TableHead>
-                  <TableHead className="font-medium text-gray-700">Bidang Usaha</TableHead>
-                  <TableHead className="font-medium text-gray-700">KBLI Code</TableHead>
-                  <TableHead className="font-medium text-gray-700">Kode KBLI Lama</TableHead>
-                  <TableHead className="font-medium text-gray-700">Judul KBLI Lama</TableHead>
-                  <TableHead className="font-medium text-gray-700">Kode KBLI Baru</TableHead>
-                  <TableHead className="font-medium text-gray-700">Judul KBLI Baru</TableHead>
-                  <TableHead className="font-medium text-gray-700">EKRAF</TableHead>
-                  <TableHead className="font-medium text-gray-700">Subsektor</TableHead>
-                  <TableHead className="font-medium text-gray-700">Pariwisata</TableHead>
-                  <TableHead className="font-medium text-gray-700">Subsektor Pariwisata</TableHead>
-                  <TableHead className="font-medium text-gray-700">Negara</TableHead>
-                  <TableHead className="font-medium text-gray-700">No Izin</TableHead>
-                  <TableHead className="font-medium text-gray-700">Investasi (USD)</TableHead>
-                  <TableHead className="font-medium text-gray-700">Investasi (IDR)</TableHead>
-                  <TableHead className="font-medium text-gray-700">Proyek</TableHead>
-                  <TableHead className="font-medium text-gray-700">TKI</TableHead>
-                  <TableHead className="font-medium text-gray-700">TKA</TableHead>
-                  <TableHead className="font-medium text-gray-700">TK</TableHead>
-                  <TableHead className="font-medium text-gray-700">Status Modal</TableHead>
-                  <TableHead className="font-medium text-gray-700">Periode</TableHead>
+                <TableRow className="border-slate-100">
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Tahun</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Sektor</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Nama Perusahaan</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Kabupaten/Kota</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Bidang Usaha</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">KBLI Code</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Kode KBLI Lama</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Judul KBLI Lama</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Kode KBLI Baru</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Judul KBLI Baru</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">EKRAF</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Subsektor</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Pariwisata</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Subsektor Pariwisata</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Negara</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">No Izin</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Investasi (USD)</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Investasi (IDR)</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Proyek</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">TKI</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">TKA</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">TK</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Status Modal</TableHead>
+                  <TableHead className="font-medium text-slate-700 dark:text-slate-300">Periode</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {data.length === 0 ? (
                   <TableRow>
-                    <TableCell colSpan={24} className="text-center py-8 text-gray-500">
+                    <TableCell colSpan={24} className="text-center py-8 text-slate-500 dark:text-slate-400">
                       Tidak ditemukan data
                     </TableCell>
                   </TableRow>
                 ) : (
                   data.map((row) => (
-                    <TableRow key={row.id} className="border-gray-100 hover:bg-gray-50">
-                      <TableCell className="text-gray-600">{row.tahun}</TableCell>
-                      <TableCell className="text-gray-600">{row.sektor}</TableCell>
-                      <TableCell className="font-medium text-gray-900 max-w-xs truncate" title={row.nama_perusahaan}>
+                    <TableRow key={row.id} className="border-slate-100 hover:bg-slate-50 dark:bg-slate-900">
+                      <TableCell className="text-slate-600 dark:text-slate-400">{row.tahun}</TableCell>
+                      <TableCell className="text-slate-600 dark:text-slate-400">{row.sektor}</TableCell>
+                      <TableCell className="font-medium text-slate-900 dark:text-white max-w-xs truncate" title={row.nama_perusahaan}>
                         {row.nama_perusahaan}
                       </TableCell>
-                      <TableCell className="text-gray-600">{row.kabupaten_kota}</TableCell>
-                      <TableCell className="text-gray-600">{row.bidang_usaha}</TableCell>
-                      <TableCell className="font-mono text-sm text-gray-600">{row.kbli_code}</TableCell>
-                      <TableCell className="font-mono text-sm text-gray-600">{row.kode_kbli_lama || '-'}</TableCell>
-                      <TableCell className="max-w-xs truncate text-gray-600" title={row.judul_kbli_lama || ''}>
+                      <TableCell className="text-slate-600 dark:text-slate-400">{row.kabupaten_kota}</TableCell>
+                      <TableCell className="text-slate-600 dark:text-slate-400">{row.bidang_usaha}</TableCell>
+                      <TableCell className="font-mono text-sm text-slate-600 dark:text-slate-400">{row.kbli_code}</TableCell>
+                      <TableCell className="font-mono text-sm text-slate-600 dark:text-slate-400">{row.kode_kbli_lama || '-'}</TableCell>
+                      <TableCell className="max-w-xs truncate text-slate-600 dark:text-slate-400" title={row.judul_kbli_lama || ''}>
                         {row.judul_kbli_lama || '-'}
                       </TableCell>
-                      <TableCell className="font-mono text-sm text-gray-600">{row.kode_kbli_baru || '-'}</TableCell>
-                      <TableCell className="max-w-xs truncate text-gray-600" title={row.judul_kbli_baru || ''}>
+                      <TableCell className="font-mono text-sm text-slate-600 dark:text-slate-400">{row.kode_kbli_baru || '-'}</TableCell>
+                      <TableCell className="max-w-xs truncate text-slate-600 dark:text-slate-400" title={row.judul_kbli_baru || ''}>
                         {row.judul_kbli_baru || '-'}
                       </TableCell>
                       <TableCell>
-                        <Badge variant={row.is_ekraf ? "default" : "secondary"} className={row.is_ekraf ? "bg-green-600 text-white" : "bg-gray-100 text-gray-700"}>
+                        <Badge variant={row.is_ekraf ? "default" : "secondary"} className={row.is_ekraf ? "bg-green-600 text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"}>
                           {row.is_ekraf ? 'Ya' : 'Tidak'}
                         </Badge>
                       </TableCell>
@@ -421,32 +421,32 @@ export function EkrafAnalysisTable() {
                         ) : '-'}
                       </TableCell>
                       <TableCell>
-                        <Badge variant={row.is_pariwisata ? "default" : "secondary"} className={row.is_pariwisata ? "bg-purple-600 text-white" : "bg-gray-100 text-gray-700"}>
+                        <Badge variant={row.is_pariwisata ? "default" : "secondary"} className={row.is_pariwisata ? "bg-purple-600 text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"}>
                           {row.is_pariwisata ? 'Ya' : 'Tidak'}
                         </Badge>
                       </TableCell>
-                      <TableCell className="text-gray-600">{row.subsektor_pariwisata || '-'}</TableCell>
-                      <TableCell className="text-gray-600">{row.negara}</TableCell>
-                      <TableCell className="font-mono text-sm text-gray-600">{row.no_izin || '-'}</TableCell>
+                      <TableCell className="text-slate-600 dark:text-slate-400">{row.subsektor_pariwisata || '-'}</TableCell>
+                      <TableCell className="text-slate-600 dark:text-slate-400">{row.negara}</TableCell>
+                      <TableCell className="font-mono text-sm text-slate-600 dark:text-slate-400">{row.no_izin || '-'}</TableCell>
                       <TableCell className="font-medium text-green-600">
                         {row.tambahan_investasi_usd > 0 ? formatCurrencyUSD(row.tambahan_investasi_usd) : '-'}
                       </TableCell>
                       <TableCell className="font-medium text-green-600">
                         {row.tambahan_investasi_rp > 0 ? formatCurrencyIDR(row.tambahan_investasi_rp) : '-'}
                       </TableCell>
-                      <TableCell className="text-center text-gray-600">{row.proyek}</TableCell>
-                      <TableCell className="text-center text-gray-600">{row.tki}</TableCell>
-                      <TableCell className="text-center text-gray-600">{row.tka}</TableCell>
-                      <TableCell className="text-center text-gray-600">{row.tk}</TableCell>
+                      <TableCell className="text-center text-slate-600 dark:text-slate-400">{row.proyek}</TableCell>
+                      <TableCell className="text-center text-slate-600 dark:text-slate-400">{row.tki}</TableCell>
+                      <TableCell className="text-center text-slate-600 dark:text-slate-400">{row.tka}</TableCell>
+                      <TableCell className="text-center text-slate-600 dark:text-slate-400">{row.tk}</TableCell>
                       <TableCell>
                         <Badge
                           variant={row.status_modal === "PMA" ? "default" : "outline"}
-                          className={row.status_modal === "PMA" ? "bg-gray-900 text-white" : "border-gray-300 text-gray-700"}
+                          className={row.status_modal === "PMA" ? "bg-gray-900 text-white" : "border-slate-300 text-slate-700 dark:text-slate-300"}
                         >
                           {row.status_modal}
                         </Badge>
                       </TableCell>
-                      <TableCell className="text-gray-600">{row.periode}</TableCell>
+                      <TableCell className="text-slate-600 dark:text-slate-400">{row.periode}</TableCell>
                     </TableRow>
                   ))
                 )}
@@ -456,8 +456,8 @@ export function EkrafAnalysisTable() {
         </div>
 
         {!loading && data.length > 0 && (
-          <div className="flex items-center justify-between p-6 border-t border-gray-100">
-            <p className="text-sm text-gray-500">
+          <div className="flex items-center justify-between p-6 border-t border-slate-100">
+            <p className="text-sm text-slate-500 dark:text-slate-400">
               Menampilkan {((currentPage - 1) * pageSize) + 1}-{Math.min(currentPage * pageSize, totalCount)} dari {totalCount.toLocaleString()} data
             </p>
             <div className="flex items-center gap-2">
@@ -466,12 +466,12 @@ export function EkrafAnalysisTable() {
                 size="sm" 
                 disabled={currentPage <= 1}
                 onClick={() => handlePageChange(currentPage - 1)}
-                className="text-gray-600 border-gray-200 bg-transparent"
+                className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
               >
                 <ChevronLeft className="w-4 h-4" />
                 Sebelumnya
               </Button>
-              <span className="text-sm text-gray-600 px-3">
+              <span className="text-sm text-slate-600 dark:text-slate-400 px-3">
                 Halaman {currentPage} dari {totalPages}
               </span>
               <Button 
@@ -479,7 +479,7 @@ export function EkrafAnalysisTable() {
                 size="sm" 
                 disabled={currentPage >= totalPages}
                 onClick={() => handlePageChange(currentPage + 1)}
-                className="text-gray-600 border-gray-200 bg-transparent"
+                className="text-slate-600 dark:text-slate-400 border-slate-200 bg-transparent"
               >
                 Selanjutnya
                 <ChevronRight className="w-4 h-4" />

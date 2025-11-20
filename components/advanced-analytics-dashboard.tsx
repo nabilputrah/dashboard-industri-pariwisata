@@ -130,10 +130,10 @@ export function AdvancedAnalyticsDashboard() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
             Advanced Analytics
           </h2>
-          <p className="text-gray-600 mt-1">
+          <p className="text-slate-600 dark:text-slate-400 mt-1">
             Analisis prediktif dan insights mendalam
           </p>
         </div>
@@ -154,7 +154,7 @@ export function AdvancedAnalyticsDashboard() {
         <CardContent className="p-6">
           <div className="flex flex-wrap gap-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                 Metrik Analisis
               </label>
               <Select value={selectedMetric} onValueChange={setSelectedMetric}>
@@ -171,7 +171,7 @@ export function AdvancedAnalyticsDashboard() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                 Periode Forecast
               </label>
               <Select value={forecastPeriod} onValueChange={setForecastPeriod}>
@@ -250,7 +250,7 @@ export function AdvancedAnalyticsDashboard() {
 
               <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-blue-50 p-4 rounded-lg">
-                  <p className="text-sm text-blue-600 font-medium">
+                  <p className="text-sm text-teal-600 font-medium">
                     Prediksi 2025 Q4
                   </p>
                   <p className="text-2xl font-bold text-blue-900">6,380</p>
@@ -263,12 +263,12 @@ export function AdvancedAnalyticsDashboard() {
                   <p className="text-2xl font-bold text-green-900">+12.3%</p>
                   <p className="text-sm text-green-700">Proyeksi tahunan</p>
                 </div>
-                <div className="bg-orange-50 p-4 rounded-lg">
-                  <p className="text-sm text-orange-600 font-medium">
+                <div className="bg-teal-50 p-4 rounded-lg">
+                  <p className="text-sm text-teal-600 font-medium">
                     Confidence Level
                   </p>
-                  <p className="text-2xl font-bold text-orange-900">75%</p>
-                  <p className="text-sm text-orange-700">Akurasi prediksi</p>
+                  <p className="text-2xl font-bold text-teal-900">75%</p>
+                  <p className="text-sm text-teal-700">Akurasi prediksi</p>
                 </div>
               </div>
             </CardContent>
@@ -310,28 +310,28 @@ export function AdvancedAnalyticsDashboard() {
                 </ScatterChart>
               </ResponsiveContainer>
 
-              <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                <h4 className="font-medium text-gray-900 mb-2">
+              <div className="mt-4 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg">
+                <h4 className="font-medium text-slate-900 dark:text-white mb-2">
                   Analisis Korelasi
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-gray-600">
+                    <p className="text-slate-600 dark:text-slate-400">
                       Koefisien Korelasi:{" "}
                       <span className="font-medium text-green-600">0.87</span>
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-slate-600 dark:text-slate-400">
                       R-squared: <span className="font-medium">0.76</span>
                     </p>
                   </div>
                   <div>
-                    <p className="text-gray-600">
+                    <p className="text-slate-600 dark:text-slate-400">
                       Interpretasi:{" "}
-                      <span className="font-medium text-blue-600">
+                      <span className="font-medium text-teal-600">
                         Korelasi Kuat Positif
                       </span>
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-slate-600 dark:text-slate-400">
                       Setiap Rp 1M investasi ≈ 0.6 tenaga kerja
                     </p>
                   </div>
@@ -355,29 +355,29 @@ export function AdvancedAnalyticsDashboard() {
                 {insights.map((insight, index) => (
                   <div
                     key={index}
-                    className="p-4 rounded-lg border border-gray-200"
+                    className="p-4 rounded-lg border border-slate-200"
                   >
                     <div className="flex items-start gap-3">
                       {insight.type === "positive" && (
                         <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
                       )}
                       {insight.type === "warning" && (
-                        <AlertTriangle className="w-5 h-5 text-orange-600 mt-0.5" />
+                        <AlertTriangle className="w-5 h-5 text-teal-600 mt-0.5" />
                       )}
                       {insight.type === "opportunity" && (
-                        <TrendingUp className="w-5 h-5 text-blue-600 mt-0.5" />
+                        <TrendingUp className="w-5 h-5 text-teal-600 mt-0.5" />
                       )}
 
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-medium text-gray-900">
+                          <h4 className="font-medium text-slate-900 dark:text-white">
                             {insight.title}
                           </h4>
                           <Badge variant="secondary" className="text-xs">
                             {insight.confidence}% confidence
                           </Badge>
                         </div>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
                           {insight.description}
                         </p>
                       </div>
@@ -395,7 +395,7 @@ export function AdvancedAnalyticsDashboard() {
               <CardContent className="space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-slate-600 dark:text-slate-400">
                       Efisiensi Investasi
                     </span>
                     <span className="font-medium text-green-600">92%</span>
@@ -410,10 +410,10 @@ export function AdvancedAnalyticsDashboard() {
 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-slate-600 dark:text-slate-400">
                       Diversifikasi Subsektor
                     </span>
-                    <span className="font-medium text-blue-600">78%</span>
+                    <span className="font-medium text-teal-600">78%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
@@ -425,7 +425,7 @@ export function AdvancedAnalyticsDashboard() {
 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-slate-600 dark:text-slate-400">
                       Penyebaran Regional
                     </span>
                     <span className="font-medium text-purple-600">65%</span>
@@ -440,14 +440,14 @@ export function AdvancedAnalyticsDashboard() {
 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-slate-600 dark:text-slate-400">
                       Sustainability Index
                     </span>
-                    <span className="font-medium text-orange-600">71%</span>
+                    <span className="font-medium text-teal-600">71%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-orange-600 h-2 rounded-full"
+                      className="bg-teal-600 h-2 rounded-full"
                       style={{ width: "71%" }}
                     ></div>
                   </div>
@@ -516,26 +516,26 @@ export function AdvancedAnalyticsDashboard() {
             </Card>
 
             {/* Conservative Scenario */}
-            <Card className="border-orange-200 bg-orange-50">
+            <Card className="border-teal-200 bg-teal-50">
               <CardHeader>
-                <CardTitle className="text-orange-800">
+                <CardTitle className="text-teal-800">
                   Skenario Konservatif
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="text-center">
-                    <p className="text-3xl font-bold text-orange-900">+8%</p>
-                    <p className="text-sm text-orange-700">
+                    <p className="text-3xl font-bold text-teal-900">+8%</p>
+                    <p className="text-sm text-teal-700">
                       Pertumbuhan proyeksi
                     </p>
                   </div>
                   <div className="space-y-2 text-sm">
-                    <p className="text-orange-800">• Investasi naik 10%</p>
-                    <p className="text-orange-800">• Tenaga kerja naik 6%</p>
-                    <p className="text-orange-800">• Pertumbuhan melambat</p>
+                    <p className="text-teal-800">• Investasi naik 10%</p>
+                    <p className="text-teal-800">• Tenaga kerja naik 6%</p>
+                    <p className="text-teal-800">• Pertumbuhan melambat</p>
                   </div>
-                  <Badge className="w-full justify-center bg-orange-600">
+                  <Badge className="w-full justify-center bg-teal-600">
                     Probabilitas: 15%
                   </Badge>
                 </div>

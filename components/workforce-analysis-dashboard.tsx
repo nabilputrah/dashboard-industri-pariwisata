@@ -245,7 +245,7 @@ export function WorkforceAnalysisDashboard() {
 
   if (error) {
     return (
-      <div className="minimal-card p-6">
+      <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg p-6">
         <div className="text-center py-8">
           <p className="text-red-600 mb-4">{error}</p>
           <Button onClick={() => window.location.reload()} variant="outline">
@@ -261,10 +261,10 @@ export function WorkforceAnalysisDashboard() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
             Analisis Tenaga Kerja Jawa Barat
           </h2>
-          <p className="text-gray-600 mt-1">
+          <p className="text-slate-600 dark:text-slate-400 mt-1">
             Analisis komprehensif tenaga kerja Industri Pariwisata berdasarkan
             tahun, kuartal, dan wilayah
           </p>
@@ -274,7 +274,7 @@ export function WorkforceAnalysisDashboard() {
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-600">
+          <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
             Total Tenaga Kerja
           </div>
           <div className="text-2xl font-bold text-blue-700 mt-1">
@@ -282,7 +282,7 @@ export function WorkforceAnalysisDashboard() {
           </div>
         </div>
         <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-600">
+          <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
             Rata-rata per Tahun
           </div>
           <div className="text-2xl font-bold text-green-700 mt-1">
@@ -292,7 +292,7 @@ export function WorkforceAnalysisDashboard() {
           </div>
         </div>
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-600">
+          <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
             Tahun Tertinggi
           </div>
           <div className="text-2xl font-bold text-purple-700 mt-1">
@@ -306,9 +306,9 @@ export function WorkforceAnalysisDashboard() {
               : "-"}
           </div>
         </div>
-        <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-600">Periode Data</div>
-          <div className="text-2xl font-bold text-orange-700 mt-1">
+        <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+          <div className="text-sm font-medium text-slate-600 dark:text-slate-400">Periode Data</div>
+          <div className="text-2xl font-bold text-teal-700 mt-1">
             {loading ? "..." : `${pivotData.length} Tahun`}
           </div>
         </div>
@@ -361,8 +361,8 @@ export function WorkforceAnalysisDashboard() {
               <CardContent>
                 {loading ? (
                   <div className="flex items-center justify-center py-8">
-                    <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-                    <span className="ml-2 text-gray-600">Memuat data...</span>
+                    <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+                    <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data...</span>
                   </div>
                 ) : (
                   <Table>
@@ -378,13 +378,13 @@ export function WorkforceAnalysisDashboard() {
                           <TableCell className="font-medium">
                             {row.year}
                           </TableCell>
-                          <TableCell className="font-medium text-blue-600">
+                          <TableCell className="font-medium text-teal-600">
                             {row.worker_count.toLocaleString()}
                           </TableCell>
                         </TableRow>
                       ))}
-                      <TableRow className="border-t-2 border-gray-300 bg-gray-50 font-bold">
-                        <TableCell className="font-bold text-gray-900">
+                      <TableRow className="border-t-2 border-slate-300 bg-slate-50 dark:bg-slate-900 font-bold">
+                        <TableCell className="font-bold text-slate-900 dark:text-white">
                           Grand Total
                         </TableCell>
                         <TableCell className="font-bold text-blue-700">
@@ -416,8 +416,8 @@ export function WorkforceAnalysisDashboard() {
               <CardContent>
                 {loading ? (
                   <div className="flex items-center justify-center py-8">
-                    <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-                    <span className="ml-2 text-gray-600">Memuat data...</span>
+                    <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+                    <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data...</span>
                   </div>
                 ) : (
                   <div className="overflow-x-auto">
@@ -438,20 +438,20 @@ export function WorkforceAnalysisDashboard() {
                           return (
                             <TableRow key={row.year}>
                               <TableCell className="font-medium">{row.year}</TableCell>
-                              <TableCell className="text-blue-600">
+                              <TableCell className="text-teal-600">
                                 {semester1.toLocaleString()}
                               </TableCell>
                               <TableCell className="text-green-600">
                                 {semester2.toLocaleString()}
                               </TableCell>
-                              <TableCell className="font-bold text-gray-900">
+                              <TableCell className="font-bold text-slate-900 dark:text-white">
                                 {row.total.toLocaleString()}
                               </TableCell>
                             </TableRow>
                           );
                         })}
-                        <TableRow className="border-t-2 border-gray-300 bg-gray-50 font-bold">
-                          <TableCell className="font-bold text-gray-900">
+                        <TableRow className="border-t-2 border-slate-300 bg-slate-50 dark:bg-slate-900 font-bold">
+                          <TableCell className="font-bold text-slate-900 dark:text-white">
                             Grand Total
                           </TableCell>
                           <TableCell className="font-bold text-blue-700">
@@ -466,7 +466,7 @@ export function WorkforceAnalysisDashboard() {
                               (grandTotalBySemester["TW-IV"] || 0)
                             ).toLocaleString()}
                           </TableCell>
-                          <TableCell className="font-bold text-gray-900">
+                          <TableCell className="font-bold text-slate-900 dark:text-white">
                             {grandTotal.toLocaleString()}
                           </TableCell>
                         </TableRow>
@@ -498,8 +498,8 @@ export function WorkforceAnalysisDashboard() {
             <CardContent>
               {loading ? (
                 <div className="flex items-center justify-center py-8">
-                  <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-                  <span className="ml-2 text-gray-600">Memuat data...</span>
+                  <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+                  <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat data...</span>
                 </div>
               ) : (
                 <div className="overflow-x-auto">
@@ -522,21 +522,21 @@ export function WorkforceAnalysisDashboard() {
                     <TableBody>
                       {regionalPivotData.slice(0, 15).map((row) => (
                         <TableRow key={row.region}>
-                          <TableCell className="font-medium text-gray-900">
+                          <TableCell className="font-medium text-slate-900 dark:text-white">
                             {row.region}
                           </TableCell>
                           {availableYears.map((year) => (
-                            <TableCell key={year} className="text-blue-600">
+                            <TableCell key={year} className="text-teal-600">
                               {(row[year] || 0).toLocaleString()}
                             </TableCell>
                           ))}
-                          <TableCell className="font-bold text-gray-900">
+                          <TableCell className="font-bold text-slate-900 dark:text-white">
                             {row.total.toLocaleString()}
                           </TableCell>
                         </TableRow>
                       ))}
-                      <TableRow className="border-t-2 border-gray-300 bg-gray-50 font-bold">
-                        <TableCell className="font-bold text-gray-900">
+                      <TableRow className="border-t-2 border-slate-300 bg-slate-50 dark:bg-slate-900 font-bold">
+                        <TableCell className="font-bold text-slate-900 dark:text-white">
                           Grand Total
                         </TableCell>
                         {availableYears.map((year) => {
@@ -553,7 +553,7 @@ export function WorkforceAnalysisDashboard() {
                             </TableCell>
                           );
                         })}
-                        <TableCell className="font-bold text-gray-900">
+                        <TableCell className="font-bold text-slate-900 dark:text-white">
                           {regionalPivotData
                             .reduce((sum, region) => sum + region.total, 0)
                             .toLocaleString()}
@@ -577,8 +577,8 @@ export function WorkforceAnalysisDashboard() {
             <CardContent>
               {loading ? (
                 <div className="flex items-center justify-center py-12">
-                  <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-                  <span className="ml-2 text-gray-600">Memuat grafik...</span>
+                  <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+                  <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat grafik...</span>
                 </div>
               ) : (
                 <ResponsiveContainer width="100%" height={400}>
@@ -615,8 +615,8 @@ export function WorkforceAnalysisDashboard() {
             <CardContent>
               {loading ? (
                 <div className="flex items-center justify-center py-12">
-                  <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
-                  <span className="ml-2 text-gray-600">Memuat grafik...</span>
+                  <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+                  <span className="ml-2 text-slate-600 dark:text-slate-400">Memuat grafik...</span>
                 </div>
               ) : (
                 <ResponsiveContainer width="100%" height={400}>

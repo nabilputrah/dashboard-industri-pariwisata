@@ -87,13 +87,13 @@ export function DatabaseFilters({ onFiltersChange }: DatabaseFiltersProps) {
   }, [filters.search])
 
   return (
-    <div className="minimal-card p-6">
+    <div className="rounded-lg border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 p-6 shadow-lg">
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 dark:text-slate-500 w-4 h-4" />
           <Input
             placeholder="Cari Pelaku Industri Pariwisata, Kode KBLI, Judul KBLI, atau No. Izin..."
-            className="pl-10 border-gray-200 focus:border-gray-400"
+            className="pl-10 border-teal-200/30 focus:border-teal-600 dark:bg-slate-700 dark:border-slate-600"
             value={filters.search}
             onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
           />
