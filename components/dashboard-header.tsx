@@ -16,7 +16,7 @@ export function DashboardHeader() {
           <div className="flex items-center gap-4">
             <img src="/logo/logo-parekraf.png" alt="Logo" className="h-12 w-12 object-contain rounded-lg bg-white/10 p-1" />
             <h1 className="text-2xl font-bold text-white">
-              Dashboard Pariwisata Jabar
+              Dashboard Industri Pariwisata Jabar
             </h1>
           </div>
 

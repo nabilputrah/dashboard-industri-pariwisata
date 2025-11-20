@@ -102,7 +102,7 @@ export function DatabaseFilters({ onFiltersChange }: DatabaseFiltersProps) {
         <div className="flex flex-wrap gap-3">
           <Select value={filters.subsector} onValueChange={(v) => handleFilterChange("subsector", v)}>
             <SelectTrigger className="w-[180px] border-gray-200">
-              <SelectValue placeholder="Subsektor EKRAF" />
+              <SelectValue placeholder="Subsektor" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">Semua Subsektor</SelectItem>

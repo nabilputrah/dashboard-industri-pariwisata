@@ -18,7 +18,7 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  
+
   const { signIn } = useAuth()
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -39,14 +39,14 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
     <div className="w-full">
       {/* Header */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-xl mb-4">
-          <Shield className="w-8 h-8 text-green-600" />
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-teal-100 rounded-xl mb-4">
+          <Shield className="w-8 h-8 text-teal-600" />
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Selamat Datang Kembali
         </h1>
         <p className="text-gray-600">
-          Masuk ke dashboard untuk mengakses analisis Industri Pariwisata
+          Masuk ke dashboard untuk mengakses analisis industri pariwisata
         </p>
       </div>
 
@@ -58,7 +58,7 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
-          
+
           <div className="space-y-3">
             <Label htmlFor="email" className="text-sm font-semibold text-gray-700">
               Alamat Email
@@ -71,10 +71,13 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
               onChange={(e) => setEmail(e.target.value)}
               required
               disabled={loading}
-              className="h-12 px-4 border-gray-200 focus:border-green-500 focus:ring-green-500/20"
+              className="
+                h-12 px-4 border-gray-200 
+                focus:border-teal-500 focus:ring-teal-500/20
+              "
             />
           </div>
-          
+
           <div className="space-y-3">
             <Label htmlFor="password" className="text-sm font-semibold text-gray-700">
               Password
@@ -88,7 +91,10 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 disabled={loading}
-                className="h-12 px-4 pr-12 border-gray-200 focus:border-green-500 focus:ring-green-500/20"
+                className="
+                  h-12 px-4 pr-12 border-gray-200 
+                  focus:border-teal-500 focus:ring-teal-500/20
+                "
               />
               <Button
                 type="button"
@@ -107,9 +113,14 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
             </div>
           </div>
 
-          <Button 
-            type="submit" 
-            className="w-full h-12 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]" 
+          <Button
+            type="submit"
+            className="
+              w-full h-12 bg-teal-600 hover:bg-teal-700 
+              text-white font-semibold rounded-xl 
+              transition-all duration-200 transform 
+              hover:scale-[1.02] active:scale-[0.98]
+            "
             disabled={loading}
           >
             {loading ? (
@@ -117,7 +128,7 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
             ) : (
               <ArrowRight className="mr-2 h-5 w-5" />
             )}
-            {loading ? 'Memproses...' : 'Masuk ke Dashboard'}
+            {loading ? "Memproses..." : "Masuk ke Dashboard"}
           </Button>
         </form>
 
@@ -130,13 +141,13 @@ export function LoginForm({ onToggleMode }: LoginFormProps) {
               <span className="px-4 bg-white text-gray-500">atau</span>
             </div>
           </div>
-          
+
           <p className="text-gray-600 mt-6">
             Belum punya akun?{" "}
             <button
               type="button"
               onClick={onToggleMode}
-              className="text-green-600 hover:text-green-700 font-semibold transition-colors"
+              className="text-teal-600 hover:text-teal-700 font-semibold transition-colors"
             >
               Daftar sekarang
             </button>

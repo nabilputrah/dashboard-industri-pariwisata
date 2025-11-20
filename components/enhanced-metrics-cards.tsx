@@ -124,7 +124,9 @@ export function EnhancedMetricsCards() {
       {/* Filter tahun */}
       <div className="flex justify-end">
         <Select value={year.toString()} onValueChange={(val) => setYear(Number(val))}>
-          <SelectTrigger className="w-[120px]">
+          <SelectTrigger
+            className="w-[120px] bg-accent text-accent-foreground"
+          >
             <SelectValue placeholder="Pilih Tahun" />
           </SelectTrigger>
           <SelectContent>

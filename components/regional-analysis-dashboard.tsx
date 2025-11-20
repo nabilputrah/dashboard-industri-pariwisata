@@ -89,7 +89,7 @@ export function RegionalAnalysisDashboard() {
       const link = document.createElement('a')
       const url = URL.createObjectURL(blob)
       link.setAttribute('href', url)
-      link.setAttribute('download', 'jumlah_proyek_ekonomi_kreatif_wilayah_jabar_2020_2025.csv')
+      link.setAttribute('download', 'jumlah_proyek_industri_pariwisata_wilayah_jabar_2020_2025.csv')
       link.style.visibility = 'hidden'
       document.body.appendChild(link)
       link.click()
@@ -140,7 +140,7 @@ export function RegionalAnalysisDashboard() {
       const link = document.createElement('a')
       const url = URL.createObjectURL(blob)
       link.setAttribute('href', url)
-      link.setAttribute('download', 'jumlah_tenaga_kerja_ekonomi_kreatif_wilayah_jabar_2020_2025.csv')
+      link.setAttribute('download', 'jumlah_tenaga_kerja_industri_pariwisata_wilayah_jabar_2020_2025.csv')
       link.style.visibility = 'hidden'
       document.body.appendChild(link)
       link.click()

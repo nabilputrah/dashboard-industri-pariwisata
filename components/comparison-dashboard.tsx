@@ -175,7 +175,7 @@ export function ComparisonDashboard() {
       </div>
 
       {/* Filters */}
-      <Card>
+      <Card className="border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg">
         <CardHeader>
           <CardTitle className="text-lg">Pengaturan Perbandingan</CardTitle>
         </CardHeader>
@@ -317,7 +317,7 @@ export function ComparisonDashboard() {
             </div>
 
             {/* Comparison Chart */}
-            <Card>
+            <Card className="border border-teal-200/30 bg-gradient-to-br from-white to-teal-50/50 dark:from-slate-800 dark:to-slate-700 shadow-lg">
               <CardHeader>
                 <CardTitle>Perbandingan Pelaku Usaha</CardTitle>
               </CardHeader>

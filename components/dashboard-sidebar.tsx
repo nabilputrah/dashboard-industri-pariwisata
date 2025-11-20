@@ -40,6 +40,12 @@ const navigationItems = [
     icon: Home,
     description: "Dashboard utama"
   },
+  {
+    id: "data-table",
+    label: "Data Pelaku",
+    icon: Database,
+    description: "Tabel data utama"
+  },
   // {
   //   id: "metrics",
   //   label: "Metrics",
@@ -57,12 +63,6 @@ const navigationItems = [
     label: "Analisis Grafik",
     icon: PieChart,
     description: "Grafik dan chart"
-  },
-  {
-    id: "data-table",
-    label: "Data Pelaku",
-    icon: Database,
-    description: "Tabel data utama"
   },
   {
     id: "regional",

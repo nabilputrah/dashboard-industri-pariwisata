@@ -18,7 +18,7 @@ export function FiltersPanel() {
         <div className="flex flex-wrap gap-3">
           <Select>
             <SelectTrigger className="w-[180px] border-gray-200">
-              <SelectValue placeholder="Subsektor EKRAF" />
+              <SelectValue placeholder="Subsektor" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="aplikasi">Aplikasi dan Game Developer</SelectItem>

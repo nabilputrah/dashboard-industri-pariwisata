@@ -139,7 +139,8 @@ export function ChartsSection() {
           value={selectedYear.toString()}
           onValueChange={(value) => setSelectedYear(parseInt(value))}
         >
-          <SelectTrigger className="w-[120px]">
+          <SelectTrigger className="w-[120px] bg-accent text-accent-foreground">
+
             <SelectValue placeholder="Tahun" />
           </SelectTrigger>
           <SelectContent>
