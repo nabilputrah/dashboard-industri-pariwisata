@@ -321,7 +321,7 @@ export function WorkforceAnalysisDashboard() {
             className="flex items-center gap-2"
           >
             <TrendingUp className="w-4 h-4" />
-            Tabel Tahunan & Kuartalan
+            Tabel Tahunan & Semesteran
           </TabsTrigger>
           <TabsTrigger value="regional" className="flex items-center gap-2">
             <Users className="w-4 h-4" />
@@ -336,7 +336,7 @@ export function WorkforceAnalysisDashboard() {
             className="flex items-center gap-2"
           >
             <PieChart className="w-4 h-4" />
-            Grafik Kuartalan
+            Grafik Semester
           </TabsTrigger>
         </TabsList>
 
