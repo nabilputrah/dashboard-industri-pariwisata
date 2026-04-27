@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+const isDev = process.env.NODE_ENV !== 'production'
+
+
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -42,7 +45,18 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.onrender.com https://*.tile.openstreetmap.org https://*.unpkg.com; font-src 'self' data: https://*.unpkg.com; connect-src 'self' https://*.onrender.com https://*.supabase.co https://*.tile.openstreetmap.org; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
+            value: `
+              default-src 'self';
+              script-src 'self' ${isDev ? "'unsafe-eval'" : ''} 'unsafe-inline';
+              style-src 'self' 'unsafe-inline';
+              img-src 'self' data: blob: https://*.onrender.com https://*.tile.openstreetmap.org https://*.unpkg.com;
+              font-src 'self' data: https://*.unpkg.com;
+              connect-src 'self' https://*.onrender.com https://*.supabase.co https://*.tile.openstreetmap.org;
+              object-src 'none';
+              base-uri 'self';
+              form-action 'self';
+              upgrade-insecure-requests;
+            `.replace(/\n/g, '')
           },
           {
             key: 'Permissions-Policy',
