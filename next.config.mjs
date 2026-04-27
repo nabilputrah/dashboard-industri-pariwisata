@@ -42,7 +42,15 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.onrender.com; font-src 'self' data:; connect-src 'self' https://*.onrender.com https://*.supabase.co; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.onrender.com https://*.tile.openstreetmap.org https://*.unpkg.com; font-src 'self' data: https://*.unpkg.com; connect-src 'self' https://*.onrender.com https://*.supabase.co https://*.tile.openstreetmap.org; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'geolocation=(), microphone=(), camera=(), payment=()'
+          },
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate'
           }
         ],
       },
