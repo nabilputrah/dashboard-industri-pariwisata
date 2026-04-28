@@ -572,7 +572,7 @@ export function RankingAnalysisTable() {
               <SelectContent>
                 {availableYears.map((year) => (
                   <SelectItem key={year} value={year.toString()}>
-                    {year}
+                    {year} {/*  set year */}
                   </SelectItem>
                 ))}
               </SelectContent>
